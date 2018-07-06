@@ -1,5 +1,5 @@
 # GestaoSalasUFRPE
-Projeto da IP2 referente à segunda avaliação do período 2018.1.
+Projeto de IP2 referente à segunda avaliação do período 2018.1.
 
 ## Requisitos
 
