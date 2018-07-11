@@ -18,6 +18,16 @@ public class Sala {
                 '}';
     }
 
+    public Sala(){
+
+    }
+
+    public Sala(String nome, int id, int capacidade, String tipo){
+        this.nome = nome;
+        this.id = id;
+        this.capacidade = capacidade;
+        this.tipo = tipo;
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

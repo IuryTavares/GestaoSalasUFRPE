@@ -1,18 +1,22 @@
+
 package br.ufrpe.bcc.model.beans;
 
-import java.util.Collection;
-import java.util.Objects;
+import java.util.*;
 
 public class Predio {
     private String nome;
-    private Collection<Sala> salas;
-
+    private ArrayList<Sala> salas;
     @Override
     public String toString() {
         return "Predio{" +
                 "nome='" + nome + '\'' +
                 ", salas=" + salas +
                 '}';
+    }
+
+    public Predio(){
+        salas = new ArrayList<>();
+        nome = "";
     }
 
     @Override
@@ -30,6 +34,7 @@ public class Predio {
         return Objects.hash(nome, salas);
     }
 
+
     public String getNome() {
         return nome;
     }
@@ -38,11 +43,12 @@ public class Predio {
         this.nome = nome;
     }
 
-    public Collection<Sala> getSalas() {
+    public ArrayList<Sala> getSalas() {
         return salas;
     }
 
-    public void setSalas(Collection<Sala> salas) {
+    public void setSalas(ArrayList<Sala> salas) {
         this.salas = salas;
     }
+
 }

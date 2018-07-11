@@ -2,19 +2,17 @@ package br.ufrpe.bcc.model.beans;
 
 import java.util.Objects;
 
-public class Professor extends PessoaFisica {
+public class Aluno extends  PessoaFisica{
     private String login;
     private String senha;
-    private String matricula = super.getCpf();
-    private String departamento;
+    private String matricula;
 
     @Override
     public String toString() {
-        return "Professor{" +
+        return "Aluno{" +
                 "login='" + login + '\'' +
                 ", senha='" + senha + '\'' +
                 ", matricula='" + matricula + '\'' +
-                ", departamento='" + departamento + '\'' +
                 '}';
     }
 
@@ -23,17 +21,16 @@ public class Professor extends PessoaFisica {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
-        Professor professor = (Professor) o;
-        return Objects.equals(login, professor.login) &&
-                Objects.equals(senha, professor.senha) &&
-                Objects.equals(matricula, professor.matricula) &&
-                Objects.equals(departamento, professor.departamento);
+        Aluno aluno = (Aluno) o;
+        return Objects.equals(login, aluno.login) &&
+                Objects.equals(senha, aluno.senha) &&
+                Objects.equals(matricula, aluno.matricula);
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(super.hashCode(), login, senha, matricula, departamento);
+        return Objects.hash(super.hashCode(), login, senha, matricula);
     }
 
     public String getLogin() {
@@ -58,13 +55,5 @@ public class Professor extends PessoaFisica {
 
     public void setMatricula(String matricula) {
         this.matricula = matricula;
-    }
-
-    public String getDepartamento() {
-        return departamento;
-    }
-
-    public void setDepartamento(String departamento) {
-        this.departamento = departamento;
     }
 }
