@@ -4,36 +4,28 @@ import java.util.Objects;
 
 public class Sala {
     private String nome;
-    private int id;
-    private int capacidade;
     private String tipo; //Enum
+    private double area;
+    private int id;
 
     @Override
     public String toString() {
         return "Sala{" +
                 "nome='" + nome + '\'' +
+                ", tipo='" + tipo + '\'' +
+                ", area=" + area +
                 ", id=" + id +
                 ", capacidade=" + capacidade +
-                ", tipo='" + tipo + '\'' +
                 '}';
     }
 
-    public Sala(){
-
-    }
-
-    public Sala(String nome, int id, int capacidade, String tipo){
-        this.nome = nome;
-        this.id = id;
-        this.capacidade = capacidade;
-        this.tipo = tipo;
-    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Sala sala = (Sala) o;
-        return id == sala.id &&
+        return Double.compare(sala.area, area) == 0 &&
+                id == sala.id &&
                 capacidade == sala.capacidade &&
                 Objects.equals(nome, sala.nome) &&
                 Objects.equals(tipo, sala.tipo);
@@ -42,7 +34,30 @@ public class Sala {
     @Override
     public int hashCode() {
 
-        return Objects.hash(nome, id, capacidade, tipo);
+        return Objects.hash(nome, tipo, area, id, capacidade);
+    }
+
+    public double getArea() {
+
+        return area;
+    }
+
+    public void setArea(double area) {
+        this.area = area;
+    }
+
+    private int capacidade;
+
+    public Sala(){
+
+    }
+
+    public Sala(String nome, String tipo, double area, int id, int capacidade) {
+        this.nome = nome;
+        this.tipo = tipo;
+        this.area = area;
+        this.id = id;
+        this.capacidade = capacidade;
     }
 
     public String getNome() {
