@@ -7,6 +7,7 @@ public class Sala {
     private String tipo; //Enum
     private double area;
     private int id;
+    private boolean disponibilidade;
 
     @Override
     public String toString() {
@@ -15,6 +16,7 @@ public class Sala {
                 ", tipo='" + tipo + '\'' +
                 ", area=" + area +
                 ", id=" + id +
+                ", disponibilidade=" + disponibilidade +
                 ", capacidade=" + capacidade +
                 '}';
     }
@@ -24,17 +26,26 @@ public class Sala {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Sala sala = (Sala) o;
-        return Double.compare(sala.area, area) == 0 &&
-                id == sala.id &&
-                capacidade == sala.capacidade &&
-                Objects.equals(nome, sala.nome) &&
-                Objects.equals(tipo, sala.tipo);
+        return Double.compare(sala.getArea(), getArea()) == 0 &&
+                getId() == sala.getId() &&
+                isDisponibilidade() == sala.isDisponibilidade() &&
+                getCapacidade() == sala.getCapacidade() &&
+                Objects.equals(getNome(), sala.getNome()) &&
+                Objects.equals(getTipo(), sala.getTipo());
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(nome, tipo, area, id, capacidade);
+        return Objects.hash(getNome(), getTipo(), getArea(), getId(), isDisponibilidade(), getCapacidade());
+    }
+
+    public boolean isDisponibilidade() {
+        return disponibilidade;
+    }
+
+    public void setDisponibilidade(boolean disponibilidade) {
+        this.disponibilidade = disponibilidade;
     }
 
     public double getArea() {

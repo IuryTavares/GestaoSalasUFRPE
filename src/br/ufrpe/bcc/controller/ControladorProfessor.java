@@ -2,16 +2,16 @@ package br.ufrpe.bcc.controller;
 
 import br.ufrpe.bcc.model.beans.Professor;
 import br.ufrpe.bcc.repositorio.IRepositorioProfessor;
+import br.ufrpe.bcc.repositorio.RepositorioProfessor;
 
 import java.util.ArrayList;
 
 public class ControladorProfessor implements IControladorProfessor{
-
     private static IControladorProfessor controller;
     private IRepositorioProfessor repositorio;
 
     private ControladorProfessor() {
-
+        this.repositorio = RepositorioProfessor.getInstance();
     }
 
     public static IControladorProfessor getInstance() {

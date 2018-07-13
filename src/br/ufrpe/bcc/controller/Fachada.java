@@ -7,8 +7,8 @@ public class Fachada {
     private static Fachada instance;
 
     private IControladorProfessor controladorProfessor;
-    //private IControladorAluno controladorAluno;
-    //private IControladorPredio controladorPredio;
+    private IControladorAluno controladorAluno;
+    private IControladorPredio controladorPredio;
     private Fachada(){
         controladorProfessor = ControladorProfessor.getInstance();
     }
