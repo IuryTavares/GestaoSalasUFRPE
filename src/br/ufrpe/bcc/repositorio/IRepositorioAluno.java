@@ -5,8 +5,9 @@ import br.ufrpe.bcc.model.beans.Aluno;
 import java.util.ArrayList;
 
 public interface IRepositorioAluno {
-    void cadastrar(Aluno p);
+    boolean cadastrar(Aluno p);
     void remover(Aluno p);
-    Aluno buscar(String lote);
+    boolean existe(String cpf);
+    Aluno buscar(String cpf);
     ArrayList<Aluno> getList();
 }

@@ -20,22 +20,44 @@ public class RepositorioProfessor implements IRepositorioProfessor{
     }
 
     @Override
-    public void cadastrar(Professor p) {
-
+    public boolean cadastrar(Professor p) {
+        if(existe(p.getCpf())){
+            return false;
+        }
+        repositorio.add(p);
+        return true;
     }
 
     @Override
     public void remover(Professor p) {
+        if(existe(p.getCpf())){
+            repositorio.remove(p);
+        }
+        return;
+    }
 
+    @Override
+    public boolean existe(String cpf) {
+        for(Professor professor: repositorio){
+            if(cpf.equals(professor.getCpf())){
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override
     public Professor buscar(String cpf) {
+        for(Professor professor: repositorio){
+            if(cpf.equals(professor.getCpf())){
+                return professor;
+            }
+        }
         return null;
     }
 
     @Override
     public ArrayList<Professor> getList() {
-        return null;
+        return this.repositorio;
     }
 }

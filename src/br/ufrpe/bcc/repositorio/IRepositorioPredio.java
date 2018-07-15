@@ -5,8 +5,9 @@ import br.ufrpe.bcc.model.beans.Predio;
 import java.util.ArrayList;
 
 public interface IRepositorioPredio {
-    void cadastrarPredio(Predio p);
+    boolean cadastrarPredio(Predio p);
     void removerPredio(Predio p);
+    boolean existe(String lote);
     Predio buscarPredio(String lote);
     ArrayList<Predio> getList();
 }

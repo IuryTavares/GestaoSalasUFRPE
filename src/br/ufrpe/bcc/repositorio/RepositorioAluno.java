@@ -20,23 +20,45 @@ public class RepositorioAluno implements IRepositorioAluno{
         }
 
         @Override
-        public void cadastrar(Aluno p) {
-
+        public boolean cadastrar(Aluno p) {
+            if(existe(p.getCpf())){
+                return false;
+            }
+            repositorio.add(p);
+            return true;
         }
 
         @Override
         public void remover(Aluno p) {
-
+            if(existe(p.getCpf())){
+                repositorio.remove(p);
+            }
+            return;
         }
 
-        @Override
+    @Override
+    public boolean existe(String cpf) {
+            for(Aluno aluno: repositorio){
+                if(cpf.equals(aluno.getCpf())){
+                    return true;
+                }
+            }
+        return false;
+    }
+
+    @Override
         public Aluno buscar(String cpf) {
+            for(Aluno aluno: repositorio){
+                if(cpf.equals(aluno.getCpf())){
+                    return aluno;
+                }
+            }
             return null;
         }
 
         @Override
         public ArrayList<Aluno> getList() {
-            return null;
+            return this.repositorio;
         }
 }
 

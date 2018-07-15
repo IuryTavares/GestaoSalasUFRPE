@@ -23,21 +23,21 @@ public class ControladorProfessor implements IControladorProfessor{
 
     @Override
     public void cadastrar(Professor p) {
-
+        repositorio.cadastrar(p);
     }
 
     @Override
     public void remover(Professor p) {
-
+        repositorio.remover(p);
     }
 
     @Override
     public Professor buscar(String cpf) {
-        return null;
+        return repositorio.buscar(cpf);
     }
 
     @Override
     public ArrayList<Professor> getList() {
-        return null;
+        return repositorio.getList();
     }
 }

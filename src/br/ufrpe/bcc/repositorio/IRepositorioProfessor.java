@@ -5,8 +5,9 @@ import br.ufrpe.bcc.model.beans.Professor;
 import java.util.ArrayList;
 
 public interface IRepositorioProfessor {
-    void cadastrar(Professor p);
+    boolean cadastrar(Professor p);
     void remover(Professor p);
-    Professor buscar(String cpf);;
+    boolean existe(String cpf);
+    Professor buscar(String cpf);
     ArrayList<Professor> getList();
 }

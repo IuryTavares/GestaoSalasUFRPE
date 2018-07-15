@@ -21,22 +21,43 @@ public class RepositorioPredio implements IRepositorioPredio {
 
 
     @Override
-    public void cadastrarPredio(Predio p) {
-
+    public boolean cadastrarPredio(Predio p) {
+        if(existe(p.getLote())){
+            return false;
+        }
+        repositorio.add(p);
+        return true;
     }
 
     @Override
     public void removerPredio(Predio p) {
+        if(existe(p.getLote())){
+            repositorio.remove(p);
+        }
+    }
 
+    @Override
+    public boolean existe(String lote) {
+        for(Predio predio: repositorio){
+            if(lote.equals(predio.getLote())){
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override
     public Predio buscarPredio(String lote) {
+        for(Predio predio: repositorio){
+            if(lote.equals(predio.getLote())){
+                return predio;
+            }
+        }
         return null;
     }
 
     @Override
     public ArrayList<Predio> getList() {
-        return null;
+        return this.repositorio;
     }
 }
