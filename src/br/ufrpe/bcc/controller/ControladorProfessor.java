@@ -21,6 +21,17 @@ public class ControladorProfessor implements IControladorProfessor{
         return controller;
     }
 
+    public boolean logar(String login, String senha){
+        for(Professor professor: repositorio.getList()){
+            if(login.equals(professor.getLogin())){
+                if(senha.equals(professor.getSenha())){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
     @Override
     public void cadastrar(Professor p) {
         repositorio.cadastrar(p);

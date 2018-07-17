@@ -5,7 +5,13 @@ import java.util.Objects;
 public class Aluno extends  PessoaFisica{
     private String login;
     private String senha;
-    private String matricula;
+    private String matricula = super.getCpf();
+
+    public Aluno(String nome, int idade, String endereco, String email, String telefone, String cpf, String login, String senha) {
+        super(nome, idade, endereco, email, telefone, cpf);
+        this.login = login;
+        this.senha = senha;
+    }
 
     @Override
     public String toString() {

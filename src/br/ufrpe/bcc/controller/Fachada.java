@@ -6,7 +6,6 @@ import br.ufrpe.bcc.model.beans.Professor;
 
 public class Fachada {
     private static Fachada instance;
-
     private IControladorProfessor controladorProfessor;
     private IControladorAluno controladorAluno;
     private IControladorPredio controladorPredio;
@@ -24,24 +23,40 @@ public class Fachada {
         return instance;
     }
 
+    //Aluno
+
     public void cadastrarAluno(Aluno a){
         this.controladorAluno.cadastrar(a);
-    }
-
-    public void cadastrarProfessor(Professor p){
-        this.controladorProfessor.cadastrar(p);
-    }
-
-    public void cadastrarProfessor(Predio p){
-        this.controladorPredio.cadastrarPredio(p);
     }
 
     public Aluno buscarAluno(Aluno a){
         return this.controladorAluno.buscar(a.getCpf());
     }
 
+    public boolean logarAluno(String login, String senha){
+        return this.controladorAluno.logar(login,senha);
+    }
+
+
+    //Professor
+
+    public void cadastrarProfessor(Professor p){
+        this.controladorProfessor.cadastrar(p);
+    }
+
     public Professor buscarProfessor(Professor p){
         return this.controladorProfessor.buscar(p.getCpf());
+    }
+
+    public boolean logarProfessor(String login, String senha){
+        return this.controladorProfessor.logar(login,senha);
+    }
+
+
+    //Predio
+
+    public void cadastrarPredio(Predio p){
+        this.controladorPredio.cadastrarPredio(p);
     }
 
     public Predio buscarPredio(Predio p){

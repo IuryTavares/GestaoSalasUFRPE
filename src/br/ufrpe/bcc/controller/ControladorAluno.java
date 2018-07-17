@@ -20,6 +20,16 @@ public class ControladorAluno implements IControladorAluno{
         }
         return controller;
     }
+    public boolean logar(String login, String senha){
+        for(Aluno aluno: repositorio.getList()){
+            if(login.equals(aluno.getLogin())){
+                if(senha.equals(aluno.getSenha())){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 
     @Override
     public void cadastrar(Aluno a) {

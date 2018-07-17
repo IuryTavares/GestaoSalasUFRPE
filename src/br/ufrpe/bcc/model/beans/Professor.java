@@ -8,6 +8,13 @@ public class Professor extends PessoaFisica {
     private String matricula = super.getCpf();
     private String departamento;
 
+    public Professor(String nome, int idade, String endereco, String email, String telefone, String cpf, String login, String senha, String departamento) {
+        super(nome, idade, endereco, email, telefone, cpf);
+        this.login = login;
+        this.senha = senha;
+        this.departamento = departamento;
+    }
+
     @Override
     public String toString() {
         return "Professor{" +

@@ -5,6 +5,11 @@ import java.util.Objects;
 public class PessoaFisica extends Pessoa {
     private String cpf;
 
+    public PessoaFisica(String nome, int idade, String endereco, String email, String telefone, String cpf) {
+        super(nome, idade, endereco, email, telefone);
+        this.cpf = cpf;
+    }
+
     public String getCpf() {
         return cpf;
     }
