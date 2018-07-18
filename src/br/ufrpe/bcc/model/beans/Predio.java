@@ -11,6 +11,13 @@ public class Predio {
     private boolean ocupado;
     private ArrayList<Sala> salas;
 
+    public Predio(String nome, String lote, double longitude, double latitude) {
+        this.nome = nome;
+        this.lote = lote;
+        this.longitude = longitude;
+        this.latitude = latitude;
+    }
+
     @Override
     public String toString() {
         return "Predio{" +

@@ -10,6 +10,10 @@ public class PessoaFisica extends Pessoa {
         this.cpf = cpf;
     }
 
+    public PessoaFisica() {
+        super();
+    }
+
     public String getCpf() {
         return cpf;
     }

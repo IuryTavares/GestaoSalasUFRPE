@@ -3,6 +3,7 @@ package br.ufrpe.bcc.controller;
 import br.ufrpe.bcc.model.beans.Aluno;
 import br.ufrpe.bcc.model.beans.Predio;
 import br.ufrpe.bcc.model.beans.Professor;
+import br.ufrpe.bcc.model.beans.Sala;
 
 public class Fachada {
     private static Fachada instance;
@@ -61,6 +62,10 @@ public class Fachada {
 
     public Predio buscarPredio(Predio p){
         return this.controladorPredio.buscarPredio(p.getLote());
+    }
+
+    public boolean novaSala(Predio p, Sala salag){
+        return this.controladorPredio.novaSala(p,salag);
     }
 
 

@@ -13,6 +13,10 @@ public class Aluno extends  PessoaFisica{
         this.senha = senha;
     }
 
+    public Aluno() {
+        super();
+    }
+
     @Override
     public String toString() {
         return "Aluno{" +

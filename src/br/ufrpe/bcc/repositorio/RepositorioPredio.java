@@ -1,6 +1,7 @@
 package br.ufrpe.bcc.repositorio;
 
 import br.ufrpe.bcc.model.beans.Predio;
+import br.ufrpe.bcc.model.beans.Sala;
 
 import java.util.ArrayList;
 
@@ -59,5 +60,15 @@ public class RepositorioPredio implements IRepositorioPredio {
     @Override
     public ArrayList<Predio> getList() {
         return this.repositorio;
+    }
+
+    public boolean novaSala(Predio p,Sala salag){
+        for(Sala sala: p.getSalas()){
+            if(salag.getId() == sala.getId()){
+                return false;
+            }
+        }
+        p.getSalas().add(salag);
+        return true;
     }
 }

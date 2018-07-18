@@ -1,6 +1,7 @@
 package br.ufrpe.bcc.controller;
 
 import br.ufrpe.bcc.model.beans.Predio;
+import br.ufrpe.bcc.model.beans.Sala;
 import br.ufrpe.bcc.repositorio.IRepositorioPredio;
 import br.ufrpe.bcc.repositorio.RepositorioPredio;
 
@@ -39,5 +40,9 @@ public class ControladorPredio implements IControladorPredio {
     @Override
     public ArrayList<Predio> getList() {
         return this.repositorio.getList();
+    }
+
+    public boolean novaSala(Predio p, Sala salag){
+        return this.repositorio.novaSala(p,salag);
     }
 }
