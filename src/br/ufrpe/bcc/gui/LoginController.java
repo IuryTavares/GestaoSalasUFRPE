@@ -27,4 +27,8 @@ public class LoginController {
             System.out.println(e.getLocalizedMessage());
         }
     }
+
+    public void irCadastro(){
+        //Vai para a tela de Cadastro
+    }
 }

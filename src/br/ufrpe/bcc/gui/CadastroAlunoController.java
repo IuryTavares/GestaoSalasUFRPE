@@ -1,6 +1,7 @@
 package br.ufrpe.bcc.gui;
 
 import br.ufrpe.bcc.controller.Fachada;
+import br.ufrpe.bcc.model.beans.Aluno;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -46,6 +47,18 @@ public class CadastroAlunoController {
         String cpf = this.txtCPF.getText();
         String login = this.txtLogin.getText();
         String senha = this.txtSenha.getText();
+        String confsenha = this.txtConfSenha.getText();
+
+        try{
+            if(this.txtSenha.getText().equals(this.txtConfSenha.getText())){
+                Aluno aluno = new Aluno(nome,idade,endereco,email,telefone,cpf,login,senha);
+                fachada.cadastrarAluno(aluno);
+                //chamada para outra tela(Esse que é o complicado)
+            }
+
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }
 
 }
