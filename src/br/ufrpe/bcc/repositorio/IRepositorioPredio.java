@@ -1,7 +1,7 @@
 package br.ufrpe.bcc.repositorio;
 
-import br.ufrpe.bcc.model.beans.Predio;
-import br.ufrpe.bcc.model.beans.Sala;
+import br.ufrpe.bcc.model.negocios.beans.Predio;
+import br.ufrpe.bcc.model.negocios.beans.Sala;
 
 import java.util.ArrayList;
 

@@ -1,6 +1,6 @@
 package br.ufrpe.bcc.controller;
 
-import br.ufrpe.bcc.model.beans.Aluno;
+import br.ufrpe.bcc.model.negocios.beans.Aluno;
 import br.ufrpe.bcc.repositorio.IRepositorioAluno;
 import br.ufrpe.bcc.repositorio.RepositorioAluno;
 

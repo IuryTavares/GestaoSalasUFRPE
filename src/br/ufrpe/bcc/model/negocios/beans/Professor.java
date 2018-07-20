@@ -1,4 +1,4 @@
-package br.ufrpe.bcc.model.beans;
+package br.ufrpe.bcc.model.negocios.beans;
 
 import java.util.Objects;
 

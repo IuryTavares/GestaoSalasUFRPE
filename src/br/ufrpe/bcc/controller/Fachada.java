@@ -1,9 +1,10 @@
 package br.ufrpe.bcc.controller;
 
-import br.ufrpe.bcc.model.beans.Aluno;
-import br.ufrpe.bcc.model.beans.Predio;
-import br.ufrpe.bcc.model.beans.Professor;
-import br.ufrpe.bcc.model.beans.Sala;
+import br.ufrpe.bcc.model.negocios.AlocacaoSala;
+import br.ufrpe.bcc.model.negocios.beans.Aluno;
+import br.ufrpe.bcc.model.negocios.beans.Predio;
+import br.ufrpe.bcc.model.negocios.beans.Professor;
+import br.ufrpe.bcc.model.negocios.beans.Sala;
 
 public class Fachada {
     private static Fachada instance;

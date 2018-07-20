@@ -10,12 +10,12 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufrpe.bcc.gui.LoginController">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufrpe.bcc.gui.LoginController">
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="448.0" prefWidth="693.0" VBox.vgrow="ALWAYS">
       <children>
             <Button layoutX="459.0" layoutY="255.0" mnemonicParsing="false" onAction="#Login" text="Login" />
-            <Button layoutX="360.0" layoutY="252.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="80.0" text="Cadastro" />
+            <Button layoutX="360.0" layoutY="255.0" mnemonicParsing="false" onAction="#irCadastro" prefHeight="17.0" prefWidth="77.0" text="Cadastro" />
             <Label layoutX="181.0" layoutY="34.0" text="Gestao Salas UFRPE">
                <font>
                   <Font size="32.0" />

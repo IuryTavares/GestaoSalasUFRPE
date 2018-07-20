@@ -1,12 +1,10 @@
 package br.ufrpe.bcc.gui;
 
 import br.ufrpe.bcc.controller.Fachada;
-import br.ufrpe.bcc.model.beans.Aluno;
+import br.ufrpe.bcc.model.negocios.beans.Aluno;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-
-import javax.swing.text.GlyphView;
 
 public class CadastroAlunoController {
     @FXML

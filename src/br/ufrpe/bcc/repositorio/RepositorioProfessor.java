@@ -1,6 +1,6 @@
 package br.ufrpe.bcc.repositorio;
 
-import br.ufrpe.bcc.model.beans.Professor;
+import br.ufrpe.bcc.model.negocios.beans.Professor;
 
 import java.util.ArrayList;
 

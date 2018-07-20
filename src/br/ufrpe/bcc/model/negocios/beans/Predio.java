@@ -1,5 +1,5 @@
 
-package br.ufrpe.bcc.model.beans;
+package br.ufrpe.bcc.model.negocios.beans;
 
 import java.util.*;
 
@@ -94,6 +94,26 @@ public class Predio {
 
     public void setSalas(ArrayList<Sala> salas) {
         this.salas = salas;
+    }
+
+    public ArrayList<Sala> getSalasAlocadas(){
+        ArrayList<Sala> salasexit = new ArrayList<>();
+        for(Sala sala: salas){
+            if(sala.isDisponibilidade()){
+                salasexit.add(sala);
+            }
+        }
+        return salasexit;
+    }
+
+    public ArrayList<Sala> getSalasDisponiveis(){
+        ArrayList<Sala> salasexit = new ArrayList<>();
+        for(Sala sala: salas){
+            if(sala.isDisponibilidade() == false){
+                salasexit.add(sala);
+            }
+        }
+        return salasexit;
     }
 
 }
