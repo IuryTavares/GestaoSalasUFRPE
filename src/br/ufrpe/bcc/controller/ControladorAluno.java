@@ -32,8 +32,8 @@ public class ControladorAluno implements IControladorAluno{
     }
 
     @Override
-    public void cadastrar(Aluno a) {
-        repositorio.cadastrar(a);
+    public boolean cadastrar(Aluno a) {
+        return repositorio.cadastrar(a);
     }
 
     @Override

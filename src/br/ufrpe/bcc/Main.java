@@ -7,15 +7,18 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class Main extends Application {
 
+    private static BorderPane root = new BorderPane();
+
     public void start(Stage primaryStage) throws IOException{
         try{
-            Parent root = FXMLLoader.load(getClass().getResource("/br/ufrpe/bcc/gui/Login.fxml"));
+            this.root = FXMLLoader.load(getClass().getResource("/br/ufrpe/bcc/gui/Login.fxml"));
             Scene scene = new Scene(root, 640, 400);
             primaryStage.setTitle("Gestão de Salas - UFRPE");
             primaryStage.getIcons().add(new Image("/br/ufrpe/bcc/imagens/Logo-UFRPE.png"));
@@ -47,5 +50,9 @@ public class Main extends Application {
 
 
         launch(args);
+    }
+
+    public static BorderPane getRoot(){
+        return root;
     }
 }

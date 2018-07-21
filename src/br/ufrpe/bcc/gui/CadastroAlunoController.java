@@ -50,13 +50,19 @@ public class CadastroAlunoController {
         try{
             if(this.txtSenha.getText().equals(this.txtConfSenha.getText())){
                 Aluno aluno = new Aluno(nome,idade,endereco,email,telefone,cpf,login,senha);
-                fachada.cadastrarAluno(aluno);
-                //chamada para outra tela(Esse que é o complicado)
+                System.out.println(aluno.toString());
+                if(fachada.cadastrarAluno(aluno)){
+                    Telas.getInstance().getLogin();
+                }
+
             }
 
         }catch(Exception e){
             e.printStackTrace();
         }
-    }
 
+    }
+    public void voltarLogin(){
+        Telas.getInstance().getLogin();
+    }
 }

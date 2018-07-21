@@ -3,53 +3,55 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
-  <children>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufrpe.bcc.gui.CadastroAlunoController">
+   <center>
+      <AnchorPane prefHeight="400.0" prefWidth="640.0" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="269.0" layoutY="51.0" text="Cadastro Aluno" textAlignment="CENTER">
+            <Label layoutX="266.0" layoutY="57.0" text="Cadastro Aluno" textAlignment="CENTER">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label layoutX="233.0" layoutY="21.0" text="Gestão Salas UFRPE" textAlignment="CENTER">
+            <Label layoutX="233.0" layoutY="27.0" text="Gestão Salas UFRPE" textAlignment="CENTER">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <TextField fx:id="txtNome" layoutX="113.0" layoutY="107.0" prefHeight="26.0" prefWidth="204.0" />
-            <TextField fx:id="txtEmail" layoutX="388.0" layoutY="175.0" prefHeight="26.0" prefWidth="149.0" />
-            <TextField fx:id="txtLogin" layoutX="113.0" layoutY="207.0" prefHeight="25.0" prefWidth="204.0" />
-            <TextField fx:id="txtCPF" layoutX="113.0" layoutY="140.0" prefHeight="25.0" prefWidth="204.0" />
-            <TextField fx:id="txtEndereco" layoutX="113.0" layoutY="174.0" prefHeight="26.0" prefWidth="204.0" promptText="Rua, Numero, Cidade" />
-            <TextField fx:id="txtTelefone" layoutX="388.0" layoutY="140.0" promptText="XX XXXXX-XXXX" />
-            <TextField fx:id="txtIdade" layoutX="388.0" layoutY="107.0" prefHeight="26.0" prefWidth="39.0" />
-            <Label layoutX="65.0" layoutY="111.0" text="Nome :" />
-            <Label layoutX="348.0" layoutY="111.0" text="Idade :" />
-            <Label layoutX="333.0" layoutY="144.0" text="Telefone :" />
-            <Label layoutX="49.0" layoutY="179.0" text="Endereço :" />
-            <Label layoutX="349.0" layoutY="179.0" text="Email :" />
-            <Label layoutX="77.0" layoutY="144.0" text="CPF :" />
-            <Label layoutX="67.0" layoutY="211.0" text="Login :" />
-            <Label layoutX="65.0" layoutY="244.0" text="Senha :" />
-            <Label layoutX="286.0" layoutY="244.0" text="Confirmar Senha :" />
-            <PasswordField fx:id="txtConfSenha" layoutX="388.0" layoutY="240.0" />
-            <PasswordField fx:id="txtSenha" layoutX="113.0" layoutY="240.0" />
-            <Button layoutX="326.0" layoutY="310.0" mnemonicParsing="false" text="Cadastrar" />
-            <Button layoutX="243.0" layoutY="310.0" mnemonicParsing="false" text="Voltar" />
-            <ImageView fitHeight="85.0" fitWidth="56.0" layoutX="557.0" layoutY="14.0">
+            <TextField fx:id="txtNome" layoutX="140.0" layoutY="127.0" prefHeight="26.0" prefWidth="204.0" />
+            <TextField fx:id="txtIdade" layoutX="415.0" layoutY="127.0" prefHeight="26.0" prefWidth="39.0" />
+            <TextField fx:id="txtCPF" layoutX="140.0" layoutY="160.0" prefHeight="25.0" prefWidth="204.0" />
+            <TextField fx:id="txtTelefone" layoutX="415.0" layoutY="160.0" promptText="XX XXXXX-XXXX" />
+            <TextField fx:id="txtEndereco" layoutX="140.0" layoutY="194.0" prefHeight="26.0" prefWidth="204.0" promptText="Rua, Numero, Cidade" />
+            <TextField fx:id="txtEmail" layoutX="415.0" layoutY="195.0" prefHeight="26.0" prefWidth="149.0" />
+            <TextField fx:id="txtLogin" layoutX="140.0" layoutY="227.0" prefHeight="25.0" prefWidth="204.0" />
+            <Label layoutX="92.0" layoutY="131.0" text="Nome :" />
+            <Label layoutX="375.0" layoutY="131.0" text="Idade :" />
+            <Label layoutX="360.0" layoutY="164.0" text="Telefone :" />
+            <Label layoutX="76.0" layoutY="199.0" text="Endereço :" />
+            <Label layoutX="376.0" layoutY="199.0" text="Email :" />
+            <Label layoutX="104.0" layoutY="164.0" text="CPF :" />
+            <Label layoutX="94.0" layoutY="231.0" text="Login :" />
+            <Label layoutX="92.0" layoutY="264.0" text="Senha :" />
+            <Label layoutX="313.0" layoutY="264.0" text="Confirmar Senha :" />
+            <PasswordField fx:id="txtSenha" layoutX="140.0" layoutY="260.0" />
+            <PasswordField fx:id="txtConfSenha" layoutX="415.0" layoutY="260.0" />
+            <Button layoutX="336.0" layoutY="330.0" mnemonicParsing="false" onAction="#Cadastrar" text="Cadastrar" />
+            <Button layoutX="270.0" layoutY="330.0" mnemonicParsing="false" onAction="#voltarLogin" text="Voltar" />
+            <ImageView fitHeight="84.0" fitWidth="55.0" layoutX="548.0">
                <image>
                   <Image url="@../imagens/Logo-UFRPE.png" />
                </image>
             </ImageView>
+            <Separator layoutY="84.0" prefHeight="2.0" prefWidth="640.0" />
          </children>
-    </AnchorPane>
-  </children>
-</VBox>
+      </AnchorPane>
+   </center>
+</BorderPane>

@@ -1,6 +1,5 @@
 package br.ufrpe.bcc.controller;
 
-import br.ufrpe.bcc.model.negocios.AlocacaoSala;
 import br.ufrpe.bcc.model.negocios.beans.Aluno;
 import br.ufrpe.bcc.model.negocios.beans.Predio;
 import br.ufrpe.bcc.model.negocios.beans.Professor;
@@ -27,8 +26,8 @@ public class Fachada {
 
     //Aluno
 
-    public void cadastrarAluno(Aluno a){
-        this.controladorAluno.cadastrar(a);
+    public boolean cadastrarAluno(Aluno a){
+        return this.controladorAluno.cadastrar(a);
     }
 
     public Aluno buscarAluno(Aluno a){
