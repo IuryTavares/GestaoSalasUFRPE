@@ -71,4 +71,16 @@ public class RepositorioPredio implements IRepositorioPredio {
         p.getSalas().add(salag);
         return true;
     }
+
+    public ArrayList<Sala> getSalasDisponiveis(Predio p){
+        return p.getSalasDisponiveis();
+    }
+
+    public ArrayList<Sala> getSalasOcupadas(Predio p){
+        return p.getSalasAlocadas();
+    }
+
+    public ArrayList<Sala> getSalasPredio(Predio p){
+        return p.getSalas();
+    }
 }

@@ -11,4 +11,7 @@ public interface IControladorPredio {
     public boolean novaSala(Predio p, Sala salag);
     Predio buscarPredio(String lote);
     ArrayList<Predio> getList();
+    ArrayList<Sala> getSalasPredio(Predio p);
+    ArrayList<Sala> getSalasDisponiveis(Predio p);
+    ArrayList<Sala> getSalasAlocadas(Predio p);
 }

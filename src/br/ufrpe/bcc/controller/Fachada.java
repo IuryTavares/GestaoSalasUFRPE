@@ -5,6 +5,8 @@ import br.ufrpe.bcc.model.negocios.beans.Predio;
 import br.ufrpe.bcc.model.negocios.beans.Professor;
 import br.ufrpe.bcc.model.negocios.beans.Sala;
 
+import java.util.ArrayList;
+
 public class Fachada {
     private static Fachada instance;
     private IControladorProfessor controladorProfessor;
@@ -67,6 +69,19 @@ public class Fachada {
     public boolean novaSala(Predio p, Sala salag){
         return this.controladorPredio.novaSala(p,salag);
     }
+
+    public ArrayList<Sala> getSalasDisponiveis(Predio p){
+        return this.controladorPredio.getSalasDisponiveis(p);
+    }
+
+    public ArrayList<Sala> getSalasOcupadas(Predio p){
+        return this.controladorPredio.getSalasAlocadas(p);
+    }
+
+    public ArrayList<Sala> getSalasPredio(Predio p){
+        return this.controladorPredio.getSalasPredio(p);
+    }
+
 
 
 }

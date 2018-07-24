@@ -45,4 +45,16 @@ public class ControladorPredio implements IControladorPredio {
     public boolean novaSala(Predio p, Sala salag){
         return this.repositorio.novaSala(p,salag);
     }
+
+    public ArrayList<Sala> getSalasAlocadas(Predio p){
+        return this.repositorio.getSalasOcupadas(p);
+    }
+
+    public ArrayList<Sala> getSalasDisponiveis(Predio p){
+        return this.repositorio.getSalasDisponiveis(p);
+    }
+
+    public ArrayList<Sala> getSalasPredio(Predio p){
+        return this.repositorio.getSalasPredio(p);
+    }
 }

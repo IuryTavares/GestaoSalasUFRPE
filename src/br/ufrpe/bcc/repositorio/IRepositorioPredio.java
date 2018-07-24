@@ -12,4 +12,7 @@ public interface IRepositorioPredio {
     boolean novaSala(Predio p,Sala salag);
     Predio buscarPredio(String lote);
     ArrayList<Predio> getList();
+    ArrayList<Sala> getSalasDisponiveis(Predio p);
+    ArrayList<Sala> getSalasOcupadas(Predio p);
+    ArrayList<Sala> getSalasPredio(Predio p);
 }

@@ -8,6 +8,15 @@ public class Sala {
     private double area;
     private int id;
     private boolean disponibilidade;
+    private int andar;
+
+    public int getAndar() {
+        return andar;
+    }
+
+    public void setAndar(int andar) {
+        this.andar = andar;
+    }
 
     @Override
     public String toString() {
@@ -16,8 +25,6 @@ public class Sala {
                 ", tipo='" + tipo + '\'' +
                 ", area=" + area +
                 ", id=" + id +
-                ", disponibilidade=" + disponibilidade +
-                ", capacidade=" + capacidade +
                 '}';
     }
 
@@ -29,6 +36,7 @@ public class Sala {
         return Double.compare(sala.getArea(), getArea()) == 0 &&
                 getId() == sala.getId() &&
                 isDisponibilidade() == sala.isDisponibilidade() &&
+                getAndar() == sala.getAndar() &&
                 getCapacidade() == sala.getCapacidade() &&
                 Objects.equals(getNome(), sala.getNome()) &&
                 Objects.equals(getTipo(), sala.getTipo());
@@ -37,7 +45,7 @@ public class Sala {
     @Override
     public int hashCode() {
 
-        return Objects.hash(getNome(), getTipo(), getArea(), getId(), isDisponibilidade(), getCapacidade());
+        return Objects.hash(getNome(), getTipo(), getArea(), getId(), isDisponibilidade(), getAndar(), getCapacidade());
     }
 
     public boolean isDisponibilidade() {
