@@ -14,6 +14,15 @@ public class AlocacaoSala {
     private int horaInicio;
     private int horaFim;
 
+    public AlocacaoSala(Predio predio, Sala sala, Professor professor, int horaInicio, int horaFim) {
+        this.predio = predio;
+        this.sala = sala;
+        this.professor = professor;
+        this.horaInicio = horaInicio;
+        this.horaFim = horaFim;
+        this.data = new Date();
+    }
+
     public Sala getSala() {
         return sala;
     }
@@ -55,11 +64,12 @@ public class AlocacaoSala {
     }
 
     public Predio getPredio() {
-
         return predio;
     }
 
     public void setPredio(Predio predio) {
         this.predio = predio;
     }
+
+
 }

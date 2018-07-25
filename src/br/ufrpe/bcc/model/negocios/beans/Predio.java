@@ -8,7 +8,7 @@ public class Predio {
     private String lote;
     private double longitude;
     private double latitude;
-    private boolean ocupado;
+    private boolean disponivel;
     private ArrayList<Sala> salas;
 
     public Predio(String nome, String lote, double longitude, double latitude) {
@@ -16,6 +16,8 @@ public class Predio {
         this.lote = lote;
         this.longitude = longitude;
         this.latitude = latitude;
+        this.salas = new ArrayList<>();
+        this.disponivel = true;
     }
 
     @Override
@@ -25,7 +27,7 @@ public class Predio {
                 ", lote='" + lote + '\'' +
                 ", longitude=" + longitude +
                 ", latitude=" + latitude +
-                ", ocupado=" + ocupado +
+                ", ocupado=" + disponivel +
                 '}';
     }
 
@@ -54,13 +56,12 @@ public class Predio {
         this.lote = lote;
     }
 
-    public boolean isOcupado() {
-
-        return ocupado;
+    public boolean isDisponivel() {
+        return disponivel;
     }
 
-    public void setOcupado(boolean ocupado) {
-        this.ocupado = ocupado;
+    public void setDisponivel(boolean disponivel) {
+        this.disponivel = disponivel;
     }
 
     public double getLongitude() {
