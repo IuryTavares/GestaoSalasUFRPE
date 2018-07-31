@@ -15,4 +15,5 @@ public interface IRepositorioPredio {
     ArrayList<Sala> getSalasDisponiveis(Predio p);
     ArrayList<Sala> getSalasOcupadas(Predio p);
     ArrayList<Sala> getSalasPredio(Predio p);
+    String getNumerosSalas(Predio p);
 }

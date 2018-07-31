@@ -83,4 +83,8 @@ public class RepositorioPredio implements IRepositorioPredio {
     public ArrayList<Sala> getSalasPredio(Predio p){
         return p.getSalas();
     }
+
+    public String getNumerosSalas(Predio p){
+        return p.getNumerosSalas();
+    }
 }

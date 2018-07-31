@@ -16,6 +16,8 @@ public class Predio {
         this.lote = lote;
         this.longitude = longitude;
         this.latitude = latitude;
+        this.ocupado = false;
+        this.salas = new ArrayList<>();
     }
 
     @Override
@@ -114,6 +116,18 @@ public class Predio {
             }
         }
         return salasexit;
+    }
+
+    public String getNumerosSalas(){
+        for(Sala sala: salas){
+            return sala.getNome();
+        }
+        return null;
+    }
+
+    public void novaSala(Sala salag){
+        this.salas.add(salag);
+        return;
     }
 
 }
