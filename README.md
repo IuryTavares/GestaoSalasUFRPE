@@ -7,12 +7,13 @@ Versão do Java: Java SE Development Kit 10.0.1
 
 ## Requisitos Funcionais:
 
-- Cadastro de novos Professores, servidores ou alunos
+- Cadastro de novos Professores ou alunos
 - Alocação de Salas ou desalocação
-- Verificação de disponibilidade de salas em cada prédio
+- Consulta de disponibilidade de salas em cada prédio
 - Sistema de login/senha
+- Relatório de Salas mais usadas ou menos usadas
 
 ## Definição da arquitetura: 
 
-![alt text](https://i.imgur.com/m3QXPfv.png)
+![alt text](https://imgur.com/iSVot4Z.png)
 
