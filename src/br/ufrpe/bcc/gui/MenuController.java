@@ -2,7 +2,9 @@ package br.ufrpe.bcc.gui;
 
 import br.ufrpe.bcc.controller.Fachada;
 
-public class MenuController {
+import java.io.Serializable;
+
+public class MenuController implements Serializable {
     private Fachada fachada = Fachada.getInstance();
 
     public void irAlocacaoSala(){
@@ -20,4 +22,6 @@ public class MenuController {
     public void irCadastroPredio(){
         Telas.getInstance().getCadastroPredio();
     }
+
+    public void irListaPredios() { Telas.getInstance().getListaPredios(); }
 }

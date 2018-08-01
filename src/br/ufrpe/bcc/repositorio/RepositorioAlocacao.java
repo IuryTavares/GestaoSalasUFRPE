@@ -2,9 +2,10 @@ package br.ufrpe.bcc.repositorio;
 
 import br.ufrpe.bcc.model.negocios.AlocacaoSala;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class RepositorioAlocacao implements IRepositorioAlocacao{
+public class RepositorioAlocacao implements IRepositorioAlocacao, Serializable {
     private static IRepositorioAlocacao alocacoes;
     private ArrayList<AlocacaoSala> repositorio;
 

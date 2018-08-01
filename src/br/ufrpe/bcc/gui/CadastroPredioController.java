@@ -5,7 +5,9 @@ import br.ufrpe.bcc.model.negocios.beans.Predio;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
-public class CadastroPredioController {
+import java.io.Serializable;
+
+public class CadastroPredioController implements Serializable {
 
     @FXML
     private TextField txtNome;

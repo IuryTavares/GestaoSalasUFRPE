@@ -1,8 +1,9 @@
 package br.ufrpe.bcc.model.negocios.beans;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Aluno extends  PessoaFisica{
+public class Aluno extends  PessoaFisica implements Serializable {
     private String login;
     private String senha;
     private String matricula = super.getCpf();

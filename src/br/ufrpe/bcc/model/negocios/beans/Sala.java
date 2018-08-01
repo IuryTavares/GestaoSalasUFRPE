@@ -1,8 +1,9 @@
 package br.ufrpe.bcc.model.negocios.beans;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Sala {
+public class Sala implements Serializable {
     private String nome;
     private String tipo;
     private double area;

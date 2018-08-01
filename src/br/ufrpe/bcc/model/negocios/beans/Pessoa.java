@@ -1,8 +1,9 @@
 package br.ufrpe.bcc.model.negocios.beans;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Pessoa {
+public class Pessoa implements Serializable {
     private String nome;
     private int idade;
     private String endereco;

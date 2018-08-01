@@ -8,8 +8,9 @@ import javafx.scene.control.TextField;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.io.Serializable;
 
-public class LoginController {
+public class LoginController implements Serializable {
     @FXML PasswordField txtSenha;
     @FXML TextField txtLogin;
 

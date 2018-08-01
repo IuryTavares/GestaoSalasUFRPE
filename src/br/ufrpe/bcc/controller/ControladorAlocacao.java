@@ -4,9 +4,10 @@ import br.ufrpe.bcc.model.negocios.AlocacaoSala;
 import br.ufrpe.bcc.repositorio.IRepositorioAlocacao;
 import br.ufrpe.bcc.repositorio.RepositorioAlocacao;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class ControladorAlocacao implements IControladorAlocacao {
+public class ControladorAlocacao implements IControladorAlocacao, Serializable {
     private static IControladorAlocacao controller;
     private IRepositorioAlocacao repositorio;
 

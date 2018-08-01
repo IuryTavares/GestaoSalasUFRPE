@@ -1,15 +1,18 @@
 
 package br.ufrpe.bcc.model.negocios.beans;
 
+import java.io.Serializable;
 import java.util.*;
 
-public class Predio {
+public class Predio implements Serializable {
     private String nome;
     private String lote;
     private double longitude;
     private double latitude;
     private boolean disponivel;
     private ArrayList<Sala> salas;
+    private int salasDisponiveis;
+    private int salasOcupadas;
 
     public Predio(String nome, String lote, double longitude, double latitude) {
         this.nome = nome;
@@ -18,6 +21,8 @@ public class Predio {
         this.latitude = latitude;
         this.salas = new ArrayList<>();
         this.disponivel = true;
+        salasDisponiveis = this.numeroSalasDisponiveis();
+        salasOcupadas = this.numeroSalasOcupadas();
     }
 
     @Override
@@ -97,21 +102,21 @@ public class Predio {
         this.salas = salas;
     }
 
-    public ArrayList<Sala> getSalasAlocadas(){
-        ArrayList<Sala> salasexit = new ArrayList<>();
+    public int numeroSalasOcupadas(){
+        int salasexit = 0;
         for(Sala sala: salas){
-            if(sala.isDisponibilidade()){
-                salasexit.add(sala);
+            if(!sala.isDisponibilidade()){
+                salasexit++;
             }
         }
         return salasexit;
     }
 
-    public ArrayList<Sala> getSalasDisponiveis(){
-        ArrayList<Sala> salasexit = new ArrayList<>();
+    public int numeroSalasDisponiveis(){
+        int salasexit = 0;
         for(Sala sala: salas){
-            if(sala.isDisponibilidade() == false){
-                salasexit.add(sala);
+            if(sala.isDisponibilidade()){
+                salasexit++;
             }
         }
         return salasexit;

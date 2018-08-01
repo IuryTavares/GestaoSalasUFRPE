@@ -1,14 +1,16 @@
 package br.ufrpe.bcc.controller;
 
+import br.ufrpe.bcc.files.Salvar;
 import br.ufrpe.bcc.model.negocios.AlocacaoSala;
 import br.ufrpe.bcc.model.negocios.beans.Aluno;
 import br.ufrpe.bcc.model.negocios.beans.Predio;
 import br.ufrpe.bcc.model.negocios.beans.Professor;
 import br.ufrpe.bcc.model.negocios.beans.Sala;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Fachada {
+public class Fachada implements Serializable {
     private static Fachada instance;
     private IControladorProfessor controladorProfessor;
     private IControladorAluno controladorAluno;
@@ -32,7 +34,11 @@ public class Fachada {
     //Aluno
 
     public boolean cadastrarAluno(Aluno a){
-        return this.controladorAluno.cadastrar(a);
+        Salvar out = new Salvar();
+        boolean confirm = this.controladorAluno.cadastrar(a);
+        out.salvar(this);
+        return confirm;
+
     }
 
     public Aluno buscarAluno(Aluno a){
@@ -47,7 +53,10 @@ public class Fachada {
     //Professor
 
     public boolean cadastrarProfessor(Professor p){
-        return this.controladorProfessor.cadastrar(p);
+        Salvar out = new Salvar();
+        boolean confirm = this.controladorProfessor.cadastrar(p);
+        out.salvar(this);
+        return confirm;
     }
 
     public Professor buscarProfessor(Professor p){
@@ -62,7 +71,11 @@ public class Fachada {
     //Predio
 
     public boolean cadastrarPredio(Predio p){
-        return this.controladorPredio.cadastrarPredio(p);
+        Salvar out = new Salvar();
+        boolean confirm = this.controladorPredio.cadastrarPredio(p);
+        out.salvar(this);
+        return confirm;
+
     }
 
     public Predio buscarPredio(Predio p){
@@ -70,20 +83,25 @@ public class Fachada {
     }
 
     public boolean novaSala(Predio p, Sala salag){
-        return this.controladorPredio.novaSala(p,salag);
+        Salvar out = new Salvar();
+        boolean confirm = this.controladorPredio.novaSala(p,salag);
+        out.salvar(this);
+        return confirm;
     }
 
-    public ArrayList<Sala> getSalasDisponiveis(Predio p){
-        return this.controladorPredio.getSalasDisponiveis(p);
+    public int numeroSalasDisponiveis(Predio p){
+        return this.controladorPredio.numeroSalasDisponiveis(p);
     }
 
-    public ArrayList<Sala> getSalasOcupadas(Predio p){
-        return this.controladorPredio.getSalasAlocadas(p);
+    public int numeroSalasOcupadas(Predio p){
+        return this.controladorPredio.numeroSalasOcupadas(p);
     }
 
     public ArrayList<Sala> getSalasPredio(Predio p){
         return this.controladorPredio.getSalasPredio(p);
     }
+
+    public ArrayList<Predio> getList(){ return this.controladorPredio.getList(); }
 
     //Alocacao
 

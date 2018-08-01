@@ -14,9 +14,10 @@ import javafx.scene.control.TableColumn.CellDataFeatures;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.util.Callback;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class SalasController {
+public class SalasController implements Serializable {
     private Fachada fachada = Fachada.getInstance();
     @FXML
     private TableView<AlocacaoSala> tabela;

@@ -3,9 +3,10 @@ package br.ufrpe.bcc.repositorio;
 import br.ufrpe.bcc.model.negocios.beans.Predio;
 import br.ufrpe.bcc.model.negocios.beans.Sala;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class RepositorioPredio implements IRepositorioPredio {
+public class RepositorioPredio implements IRepositorioPredio, Serializable {
     private static IRepositorioPredio predios;
     private ArrayList<Predio> repositorio;
 
@@ -72,12 +73,12 @@ public class RepositorioPredio implements IRepositorioPredio {
         return true;
     }
 
-    public ArrayList<Sala> getSalasDisponiveis(Predio p){
-        return p.getSalasDisponiveis();
+    public int numeroSalasDisponiveis(Predio p){
+        return p.numeroSalasDisponiveis();
     }
 
-    public ArrayList<Sala> getSalasOcupadas(Predio p){
-        return p.getSalasAlocadas();
+    public int numeroSalasOcupadas(Predio p){
+        return p.numeroSalasOcupadas();
     }
 
     public ArrayList<Sala> getSalasPredio(Predio p){

@@ -31,7 +31,7 @@
             </ImageView>
             <Separator layoutY="84.0" prefHeight="2.0" prefWidth="640.0" />
             <Button layoutX="175.0" layoutY="200.0" mnemonicParsing="false" onAction="#irCadastroPredio" prefHeight="54.0" prefWidth="126.0" text="Novo Prédio" />
-            <Button layoutX="175.0" layoutY="273.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="126.0" text="Nova Sala" />
+            <Button layoutX="175.0" layoutY="273.0" mnemonicParsing="false" onAction="#irListaPredios" prefHeight="54.0" prefWidth="126.0" text="Nova Sala" />
             <Button layoutX="340.0" layoutY="200.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="126.0" text="Buscar Prédio" />
             <Button layoutX="340.0" layoutY="273.0" mnemonicParsing="false" onAction="#irAlocacaoSala" prefHeight="54.0" prefWidth="126.0" text="Alocar Sala" />
             <Separator layoutX="289.0" layoutY="59.0" orientation="VERTICAL" prefHeight="20.0" prefWidth="3.0" />

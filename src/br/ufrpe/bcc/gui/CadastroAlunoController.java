@@ -6,7 +6,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
-public class CadastroAlunoController {
+import java.io.Serializable;
+
+public class CadastroAlunoController implements Serializable {
     @FXML
     private TextField txtNome;
 

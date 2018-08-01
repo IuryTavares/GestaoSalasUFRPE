@@ -2,9 +2,10 @@ package br.ufrpe.bcc.repositorio;
 
 import br.ufrpe.bcc.model.negocios.beans.Professor;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class RepositorioProfessor implements IRepositorioProfessor{
+public class RepositorioProfessor implements IRepositorioProfessor, Serializable {
     private static IRepositorioProfessor professores;
     private ArrayList<Professor> repositorio;
 

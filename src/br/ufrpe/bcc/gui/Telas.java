@@ -5,9 +5,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.BorderPane;
 
 import java.io.IOException;
+import java.io.Serializable;
 
-public class Telas {
-    FXMLLoader login, cadastroAluno, menuADM, alocarSala, cadastroProfessor, cadastroPredio;
+public class Telas implements Serializable {
+    FXMLLoader login, cadastroAluno, menuADM, alocarSala, cadastroProfessor, cadastroPredio, listaPredios;
     BorderPane paneLogin;
     BorderPane border;
     BorderPane paneCadastroAluno;
@@ -15,6 +16,7 @@ public class Telas {
     BorderPane paneAlocacaoSalas;
     BorderPane paneCadastroProfessor;
     BorderPane paneCadastroPredio;
+    BorderPane paneListaPredios;
 
     public static Telas instancia;
 
@@ -39,6 +41,8 @@ public class Telas {
             this.paneCadastroProfessor = cadastroProfessor.load();
             cadastroPredio = new FXMLLoader(this.getClass().getResource("/br/ufrpe/bcc/gui/CadastroPredio.fxml"));
             this.paneCadastroPredio = cadastroPredio.load();
+            listaPredios = new FXMLLoader(this.getClass().getResource("/br/ufrpe/bcc/gui/TabelaPredios.fxml"));
+            this.paneListaPredios = listaPredios.load();
             this.border = Main.getRoot();
 
         }catch(IOException e){
@@ -68,6 +72,12 @@ public class Telas {
 
     public void getCadastroPredio(){
         border.setCenter(this.paneCadastroPredio);
+    }
+
+    public void getListaPredios() {
+        border.setCenter(this.paneListaPredios);
+        TabelaPrediosController tabelaPrediosController = new TabelaPrediosController();
+        tabelaPrediosController.showInfo();
     }
 
 }

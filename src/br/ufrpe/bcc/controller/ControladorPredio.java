@@ -5,9 +5,10 @@ import br.ufrpe.bcc.model.negocios.beans.Sala;
 import br.ufrpe.bcc.repositorio.IRepositorioPredio;
 import br.ufrpe.bcc.repositorio.RepositorioPredio;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class ControladorPredio implements IControladorPredio {
+public class ControladorPredio implements IControladorPredio, Serializable {
     private static IControladorPredio controller;
     private IRepositorioPredio repositorio;
 
@@ -46,12 +47,12 @@ public class ControladorPredio implements IControladorPredio {
         return this.repositorio.novaSala(p,salag);
     }
 
-    public ArrayList<Sala> getSalasAlocadas(Predio p){
-        return this.repositorio.getSalasOcupadas(p);
+    public int numeroSalasOcupadas(Predio p){
+        return this.repositorio.numeroSalasOcupadas(p);
     }
 
-    public ArrayList<Sala> getSalasDisponiveis(Predio p){
-        return this.repositorio.getSalasDisponiveis(p);
+    public int numeroSalasDisponiveis(Predio p){
+        return this.repositorio.numeroSalasDisponiveis(p);
     }
 
     public ArrayList<Sala> getSalasPredio(Predio p){

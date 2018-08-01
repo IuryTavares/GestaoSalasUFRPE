@@ -12,6 +12,6 @@ public interface IControladorPredio {
     Predio buscarPredio(String lote);
     ArrayList<Predio> getList();
     ArrayList<Sala> getSalasPredio(Predio p);
-    ArrayList<Sala> getSalasDisponiveis(Predio p);
-    ArrayList<Sala> getSalasAlocadas(Predio p);
+    int numeroSalasDisponiveis(Predio p);
+    int numeroSalasOcupadas(Predio p);
 }

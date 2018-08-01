@@ -1,6 +1,7 @@
 package br.ufrpe.bcc;
 
 import br.ufrpe.bcc.controller.Fachada;
+import br.ufrpe.bcc.files.Salvar;
 import br.ufrpe.bcc.gui.SalasController;
 import br.ufrpe.bcc.model.negocios.AlocacaoSala;
 import br.ufrpe.bcc.model.negocios.beans.Aluno;
@@ -34,12 +35,16 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
-        Fachada fachada = Fachada.getInstance();
+        Fachada fachada;
 
-        Aluno admin = new Aluno();
+        Salvar in = new Salvar();
+        fachada = in.carregar();
+
+        /*Aluno admin = new Aluno();
         admin.setLogin("admin");
         admin.setSenha("admin");
         admin.setCpf("admin");
+        fachada.cadastrarAluno(admin);
 
 
         Predio ceagri = new Predio("Ceagri-2", "12322123", 199.22,112.3);
@@ -54,13 +59,6 @@ public class Main extends Application {
         alocar.setPredio(ceagri);
         alocar.setProfessor(professor1);
         alocar.setSala(sala1);
-
-        fachada.novaAlocacao(alocar);
-        SalasController s1 = new SalasController();
-        System.out.println(alocar.getPredio().getNome());
-        System.out.println(alocar.getPredio().getSalas());
-        s1.showInfo();
-
 
         Aluno a1 = new Aluno();
         a1.setLogin("a1login");
@@ -77,7 +75,7 @@ public class Main extends Application {
         fachada.cadastrarAluno(a1);
         fachada.cadastrarAluno(a2);
 
-
+        */
         launch(args);
     }
 
