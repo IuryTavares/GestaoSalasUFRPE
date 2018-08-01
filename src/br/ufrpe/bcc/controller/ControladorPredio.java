@@ -23,8 +23,8 @@ public class ControladorPredio implements IControladorPredio {
     }
 
     @Override
-    public void cadastrarPredio(Predio p) {
-        repositorio.cadastrarPredio(p);
+    public boolean cadastrarPredio(Predio p) {
+        return repositorio.cadastrarPredio(p);
     }
 
     @Override

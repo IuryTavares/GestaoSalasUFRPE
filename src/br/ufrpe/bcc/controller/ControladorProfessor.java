@@ -33,8 +33,8 @@ public class ControladorProfessor implements IControladorProfessor{
     }
 
     @Override
-    public void cadastrar(Professor p) {
-        repositorio.cadastrar(p);
+    public boolean cadastrar(Professor p) {
+        return repositorio.cadastrar(p);
     }
 
     @Override

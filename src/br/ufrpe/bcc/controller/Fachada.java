@@ -1,5 +1,6 @@
 package br.ufrpe.bcc.controller;
 
+import br.ufrpe.bcc.model.negocios.AlocacaoSala;
 import br.ufrpe.bcc.model.negocios.beans.Aluno;
 import br.ufrpe.bcc.model.negocios.beans.Predio;
 import br.ufrpe.bcc.model.negocios.beans.Professor;
@@ -12,11 +13,13 @@ public class Fachada {
     private IControladorProfessor controladorProfessor;
     private IControladorAluno controladorAluno;
     private IControladorPredio controladorPredio;
+    private IControladorAlocacao controladorAlocacao;
 
     private Fachada(){
         controladorPredio = ControladorPredio.getInstance();
         controladorAluno = ControladorAluno.getInstance();
         controladorProfessor = ControladorProfessor.getInstance();
+        controladorAlocacao = ControladorAlocacao.getInstance();
     }
 
     public static Fachada getInstance(){
@@ -43,8 +46,8 @@ public class Fachada {
 
     //Professor
 
-    public void cadastrarProfessor(Professor p){
-        this.controladorProfessor.cadastrar(p);
+    public boolean cadastrarProfessor(Professor p){
+        return this.controladorProfessor.cadastrar(p);
     }
 
     public Professor buscarProfessor(Professor p){
@@ -58,8 +61,8 @@ public class Fachada {
 
     //Predio
 
-    public void cadastrarPredio(Predio p){
-        this.controladorPredio.cadastrarPredio(p);
+    public boolean cadastrarPredio(Predio p){
+        return this.controladorPredio.cadastrarPredio(p);
     }
 
     public Predio buscarPredio(Predio p){
@@ -80,6 +83,20 @@ public class Fachada {
 
     public ArrayList<Sala> getSalasPredio(Predio p){
         return this.controladorPredio.getSalasPredio(p);
+    }
+
+    //Alocacao
+
+    public boolean novaAlocacao(AlocacaoSala a){
+        return this.controladorAlocacao.novaAlocacao(a);
+    }
+
+    public boolean removerAlocacao(AlocacaoSala a){
+        return this.controladorAlocacao.removerAlocacao(a);
+    }
+
+    public ArrayList<AlocacaoSala> listar(){
+        return this.controladorAlocacao.getList();
     }
 
 

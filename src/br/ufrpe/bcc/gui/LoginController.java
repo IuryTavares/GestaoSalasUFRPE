@@ -19,7 +19,13 @@ public class LoginController {
         String login = this.txtLogin.getText();
         String senha = this.txtSenha.getText();
         try{
-            System.out.println(this.fachada.logarAluno(login,senha));
+            if(txtLogin.getText().equals("admin")) {
+                if (txtSenha.getText().equals("admin")) {
+                    Telas.getInstance().getMenuADM();
+                }
+            }
+            this.fachada.logarProfessor(login,senha);
+            this.fachada.logarAluno(login,senha);
         }catch (Exception e){
             System.out.println(e.getLocalizedMessage());
         }
