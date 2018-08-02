@@ -14,6 +14,7 @@ public class AlocacaoSala {
     private int horaInicio;
     private int horaFim;
 
+
     public AlocacaoSala(Predio predio, Sala sala, Professor professor, int horaInicio, int horaFim) {
         this.predio = predio;
         this.sala = sala;
