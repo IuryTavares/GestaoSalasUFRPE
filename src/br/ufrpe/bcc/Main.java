@@ -1,21 +1,16 @@
 package br.ufrpe.bcc;
 
-import br.ufrpe.bcc.controller.ControladorAlocacoesGenericas;
 import br.ufrpe.bcc.controller.Fachada;
 import br.ufrpe.bcc.gui.SalasController;
-import br.ufrpe.bcc.model.negocios.AlocacaoSala;
-import br.ufrpe.bcc.model.negocios.beans.*;
+import br.ufrpe.bcc.model.negocios.beans.Aluno;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Main extends Application {
 

@@ -1,7 +1,5 @@
 package br.ufrpe.bcc.gui;
 
-import br.ufrpe.bcc.Main;
-import br.ufrpe.bcc.controller.ControladorAlocacoesGenericas;
 import br.ufrpe.bcc.model.negocios.AlocacaoSala;
 import br.ufrpe.bcc.model.negocios.beans.AlocacaoSalaGeneric;
 import br.ufrpe.bcc.model.negocios.beans.Predio;
@@ -17,10 +15,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
-
-import static javafx.application.Application.launch;
 
 public class SalasController implements Initializable {
     @FXML
