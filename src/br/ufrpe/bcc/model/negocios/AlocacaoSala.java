@@ -22,6 +22,7 @@ public class AlocacaoSala {
         this.horaInicio = horaInicio;
         this.horaFim = horaFim;
         this.data = new Date();
+
     }
 
     public Sala getSala() {

@@ -24,7 +24,7 @@ public class Main extends Application {
 
     public void start(Stage primaryStage) throws IOException{
         try{
-            this.root = FXMLLoader.load(getClass().getResource("/br/ufrpe/bcc/gui/Salas.fxml"));
+            this.root = FXMLLoader.load(getClass().getResource("/br/ufrpe/bcc/gui/Professores.fxml"));
             Scene scene = new Scene(root, 640, 400);
             primaryStage.setTitle("Gestão de Salas - UFRPE");
             primaryStage.getIcons().add(new Image("/br/ufrpe/bcc/imagens/Logo-UFRPE.png"));
