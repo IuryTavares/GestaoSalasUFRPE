@@ -4,9 +4,10 @@ import br.ufrpe.bcc.model.negocios.beans.Aluno;
 import br.ufrpe.bcc.repositorio.IRepositorioAluno;
 import br.ufrpe.bcc.repositorio.RepositorioAluno;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class ControladorAluno implements IControladorAluno{
+public class ControladorAluno implements IControladorAluno, Serializable {
     private static IControladorAluno controller;
     private IRepositorioAluno repositorio;
 

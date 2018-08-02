@@ -4,9 +4,10 @@ import br.ufrpe.bcc.model.negocios.beans.Professor;
 import br.ufrpe.bcc.repositorio.IRepositorioProfessor;
 import br.ufrpe.bcc.repositorio.RepositorioProfessor;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class ControladorProfessor implements IControladorProfessor{
+public class ControladorProfessor implements IControladorProfessor, Serializable {
     private static IControladorProfessor controller;
     private IRepositorioProfessor repositorio;
 
@@ -33,8 +34,8 @@ public class ControladorProfessor implements IControladorProfessor{
     }
 
     @Override
-    public void cadastrar(Professor p) {
-        repositorio.cadastrar(p);
+    public boolean cadastrar(Professor p) {
+        return repositorio.cadastrar(p);
     }
 
     @Override

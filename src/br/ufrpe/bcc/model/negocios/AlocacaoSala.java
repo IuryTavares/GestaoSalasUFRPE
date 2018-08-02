@@ -4,9 +4,10 @@ import br.ufrpe.bcc.model.negocios.beans.Predio;
 import br.ufrpe.bcc.model.negocios.beans.Professor;
 import br.ufrpe.bcc.model.negocios.beans.Sala;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class AlocacaoSala {
+public class AlocacaoSala implements Serializable {
     private Predio predio;
     private Sala sala;
     private Professor professor;

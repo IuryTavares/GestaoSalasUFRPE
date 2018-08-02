@@ -1,14 +1,25 @@
 package br.ufrpe.bcc.model.negocios.beans;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Sala {
+public class Sala implements Serializable {
     private String nome;
-    private String tipo; //Enum
+    private String tipo;
     private double area;
     private int id;
-    private boolean disponibilidade;
+    private boolean ocupada;
     private int andar;
+
+    public Sala(String nome, String tipo, double area, int id, int andar, int capacidade) {
+        this.nome = nome;
+        this.tipo = tipo;
+        this.area = area;
+        this.id = id;
+        this.andar = andar;
+        this.capacidade = capacidade;
+        this.ocupada = false;
+    }
 
     public int getAndar() {
         return andar;
@@ -49,11 +60,11 @@ public class Sala {
     }
 
     public boolean isDisponibilidade() {
-        return disponibilidade;
+        return ocupada;
     }
 
     public void setDisponibilidade(boolean disponibilidade) {
-        this.disponibilidade = disponibilidade;
+        this.ocupada = disponibilidade;
     }
 
     public double getArea() {
