@@ -1,5 +1,6 @@
 package br.ufrpe.bcc.gui;
 
+import br.ufrpe.bcc.controller.Fachada;
 import br.ufrpe.bcc.model.negocios.AlocacaoSala;
 import br.ufrpe.bcc.model.negocios.beans.AlocacaoSalaGeneric;
 import br.ufrpe.bcc.model.negocios.beans.Predio;
@@ -39,8 +40,7 @@ public class SalasController implements Initializable {
 
 
     private ObservableList<AlocacaoSalaGeneric> listaDeAlocacoes() {
-        Predio p1= new Predio(
-                "Ceagri","fodda-se",314,251.15);
+        Predio p1 = Fachada.getInstance().getPredio("12322123");
 
         Sala s1 = new Sala(
                 "Sala 1","Sala de aula", 3.15 , 1, 30);

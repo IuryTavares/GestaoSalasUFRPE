@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.io.Serializable;
 
 public class Telas implements Serializable {
-    FXMLLoader login, cadastroAluno, menuADM, alocarSala, cadastroProfessor, cadastroPredio, listaPredios;
+    FXMLLoader login, cadastroAluno, menuADM, alocarSala, cadastroProfessor, cadastroPredio, listaProfessores, cadastroSala;
     BorderPane paneLogin;
     BorderPane border;
     BorderPane paneCadastroAluno;
@@ -16,7 +16,8 @@ public class Telas implements Serializable {
     BorderPane paneAlocacaoSalas;
     BorderPane paneCadastroProfessor;
     BorderPane paneCadastroPredio;
-    BorderPane paneListaPredios;
+    BorderPane paneListaProfessores;
+    BorderPane paneCadastroSala;
 
     public static Telas instancia;
 
@@ -41,8 +42,10 @@ public class Telas implements Serializable {
             this.paneCadastroProfessor = cadastroProfessor.load();
             cadastroPredio = new FXMLLoader(this.getClass().getResource("/br/ufrpe/bcc/gui/CadastroPredio.fxml"));
             this.paneCadastroPredio = cadastroPredio.load();
-            listaPredios = new FXMLLoader(this.getClass().getResource("/br/ufrpe/bcc/gui/TabelaPredios.fxml"));
-            this.paneListaPredios = listaPredios.load();
+            listaProfessores = new FXMLLoader(this.getClass().getResource("/br/ufrpe/bcc/gui/Professores.fxml"));
+            this.paneListaProfessores = listaProfessores.load();
+            cadastroSala = new FXMLLoader(this.getClass().getResource("/br/ufrpe/bcc/gui/CadastroSala.fxml"));
+            this.paneCadastroSala = cadastroSala.load();
             this.border = Main.getRoot();
 
         }catch(IOException e){
@@ -63,7 +66,7 @@ public class Telas implements Serializable {
     public void getAlocarSala(){
         border.setCenter(this.paneAlocacaoSalas);
         SalasController salasController = new SalasController();
-        salasController.showInfo();
+        //salasController.showInfo();
     }
 
     public void getCadastroProfessor(){
@@ -74,10 +77,10 @@ public class Telas implements Serializable {
         border.setCenter(this.paneCadastroPredio);
     }
 
-    public void getListaPredios() {
-        border.setCenter(this.paneListaPredios);
-        TabelaPrediosController tabelaPrediosController = new TabelaPrediosController();
-        tabelaPrediosController.showInfo();
+    public void getListaProfessores(){
+        border.setCenter(this.paneListaProfessores);
     }
+
+    public void getCadastroSala() { border.setCenter(this.paneCadastroSala); }
 
 }

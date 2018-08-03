@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufrpe.bcc.gui.CadastroSalaController">
+   <center>
+      <AnchorPane prefHeight="400.0" prefWidth="640.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="275.0" layoutY="57.0" text="Cadastro Sala" textAlignment="CENTER">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="233.0" layoutY="27.0" text="Gestão Salas UFRPE" textAlignment="CENTER">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtTipo" layoutX="107.0" layoutY="198.0" prefHeight="26.0" prefWidth="204.0" />
+            <TextField fx:id="txtNome" layoutX="107.0" layoutY="164.0" prefHeight="25.0" prefWidth="204.0" />
+            <TextField fx:id="txtID" layoutX="381.0" layoutY="164.0" prefHeight="26.0" prefWidth="204.0" />
+            <TextField fx:id="txtArea" layoutX="381.0" layoutY="230.0" prefHeight="25.0" prefWidth="49.0" />
+            <Label layoutX="56.0" layoutY="168.0" text="Nome  :" />
+            <Label layoutX="342.0" layoutY="234.0" text="Área  :" />
+            <Label layoutX="70.0" layoutY="202.0" text="Tipo :" />
+            <Label layoutX="359.0" layoutY="168.0" text="ID :" />
+            <Button layoutX="320.0" layoutY="296.0" mnemonicParsing="false" onAction="#Cadastrar" text="Cadastrar" />
+            <Button layoutX="254.0" layoutY="296.0" mnemonicParsing="false" onAction="#voltarMENU" text="Voltar" />
+            <ImageView fitHeight="84.0" fitWidth="55.0" layoutX="548.0">
+               <image>
+                  <Image url="@../imagens/Logo-UFRPE.png" />
+               </image>
+            </ImageView>
+            <Separator layoutY="84.0" prefHeight="2.0" prefWidth="640.0" />
+            <Label layoutX="339.0" layoutY="202.0" text="Andar :" />
+            <Label layoutX="33.0" layoutY="234.0" text="Capacidade : " />
+            <TextField fx:id="txtAndar" layoutX="381.0" layoutY="198.0" prefHeight="26.0" prefWidth="204.0" />
+            <TextField fx:id="txtCapacidade" layoutX="107.0" layoutY="230.0" prefHeight="25.0" prefWidth="53.0" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

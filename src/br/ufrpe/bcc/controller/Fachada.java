@@ -67,6 +67,14 @@ public class Fachada implements Serializable {
         return this.controladorProfessor.logar(login,senha);
     }
 
+    public ArrayList<Professor> getListProfessor(){
+        return this.controladorProfessor.getList();
+    }
+
+    public void removerProfessor(Professor p){
+        this.controladorProfessor.remover(p);
+    }
+
 
     //Predio
 
@@ -102,6 +110,15 @@ public class Fachada implements Serializable {
     }
 
     public ArrayList<Predio> getList(){ return this.controladorPredio.getList(); }
+
+    public Predio getPredio(String lote){
+        for(Predio predio: this.controladorPredio.getList()){
+            if(lote.equals(predio.getLote())){
+                return predio;
+            }
+        }
+        return null;
+    }
 
     //Alocacao
 

@@ -10,6 +10,7 @@ public class Sala implements Serializable {
     private int id;
     private boolean ocupada;
     private int andar;
+    private int capacidade;
 
     public Sala(String nome, String tipo, double area, int id, int andar, int capacidade) {
         this.nome = nome;
@@ -74,12 +75,6 @@ public class Sala implements Serializable {
 
     public void setArea(double area) {
         this.area = area;
-    }
-
-    private int capacidade;
-
-    public Sala(){
-
     }
 
     public Sala(String nome, String tipo, double area, int id, int capacidade) {

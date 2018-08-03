@@ -1,6 +1,7 @@
 package br.ufrpe.bcc.gui;
 
 import br.ufrpe.bcc.controller.Fachada;
+import br.ufrpe.bcc.files.Salvar;
 import br.ufrpe.bcc.model.negocios.beans.Professor;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
@@ -57,6 +58,7 @@ public class CadastroProfessorController implements Serializable {
         try{
             if(this.txtSenha.getText().equals(this.txtConfSenha.getText())){
                 Professor professor = new Professor(nome,idade,endereco,email,telefone,cpf,login,senha,departamento);
+                System.out.println(fachada.cadastrarProfessor(professor));
                 if(fachada.cadastrarProfessor(professor)){
                     Telas.getInstance().getMenuADM();
                 }

@@ -2,7 +2,6 @@ package br.ufrpe.bcc.gui;
 
 import br.ufrpe.bcc.controller.Fachada;
 import javafx.fxml.FXML;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
@@ -25,8 +24,10 @@ public class LoginController implements Serializable {
                     Telas.getInstance().getMenuADM();
                 }
             }
-            this.fachada.logarProfessor(login,senha);
-            this.fachada.logarAluno(login,senha);
+            System.out.println(login);
+            System.out.println(senha);
+            System.out.println(this.fachada.logarProfessor(login,senha));
+            System.out.println(this.fachada.logarAluno(login,senha));
         }catch (Exception e){
             System.out.println(e.getLocalizedMessage());
         }

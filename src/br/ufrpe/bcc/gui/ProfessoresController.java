@@ -1,5 +1,6 @@
 package br.ufrpe.bcc.gui;
 
+import br.ufrpe.bcc.controller.Fachada;
 import br.ufrpe.bcc.model.negocios.beans.Professor;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -37,6 +38,7 @@ public class ProfessoresController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        System.out.println(colunaMatricula);
         colunaMatricula.setCellValueFactory(
                 new PropertyValueFactory<Professor,String>("Matricula"));
         colunaNome.setCellValueFactory(
@@ -51,14 +53,15 @@ public class ProfessoresController implements Initializable {
                 new PropertyValueFactory<Professor,Integer>("Idade"));
 
         tabelaProfessores.setItems(listaDeProfessores());
+        tabelaProfessores.refresh();
     }
 
     private ObservableList<Professor> listaDeProfessores() {
-        return FXCollections.observableArrayList(
-                new Professor("Gru",42,"Algum Lugar","gru@ufrpe.br","3212-3456","123.456.789.0","gru","minions","DC"),
-                new Professor("Minha Arma",30,"Queria Saber","minha.arma@ufrpe.br","souber avisa","012.345.678-9","m16","5.56x45","DC"),
-                new Professor("Nefario",40,"Quem souber morre","nefario@ufrpe.br","3000-0000","901.23456-8","nefario", "mas ve","DC")
+        System.out.println(Fachada.getInstance().getListProfessor());
+        return FXCollections.observableArrayList(Fachada.getInstance().getListProfessor());
+    }
 
-        );
+    public void voltar(){
+        Telas.getInstance().getMenuADM();
     }
 }

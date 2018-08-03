@@ -20,6 +20,7 @@ public class Main extends Application {
 
     private static BorderPane root = new BorderPane();
 
+
     public void start(Stage primaryStage) throws IOException{
         try{
             this.root = FXMLLoader.load(getClass().getResource("/br/ufrpe/bcc/gui/Login.fxml"));
@@ -40,16 +41,17 @@ public class Main extends Application {
         Salvar in = new Salvar();
         fachada = in.carregar();
 
-        /*Aluno admin = new Aluno();
-        admin.setLogin("admin");
-        admin.setSenha("admin");
-        admin.setCpf("admin");
-        fachada.cadastrarAluno(admin);
+        Professor professor1 = new Professor("ProfessorGAME", 33, "Ceagri e e nois", "profelele@gmail.com", "819123123123","123123123212", "profelele","laemksa","DEINFO");
+        Fachada.getInstance().cadastrarProfessor(professor1);
+        Professor professor2 = new Professor("ProfessorGAME", 33, "Ceagri e e nois", "profelele@gmail.com", "819123123123","12312312322", "profelele","laemksa","DEINFO");
+        Fachada.getInstance().cadastrarProfessor(professor2);
+
+        System.out.println(Fachada.getInstance().getListProfessor());
 
 
+        /*
         Predio ceagri = new Predio("Ceagri-2", "12322123", 199.22,112.3);
         fachada.cadastrarPredio(ceagri);
-        Professor professor1 = new Professor("ProfessorGAME", 33, "Ceagri e e nois", "profelele@gmail.com", "819123123123","12312312312", "profelele","laemksa","DEINFO");
         fachada.cadastrarProfessor(professor1);
         Sala sala1 = new Sala("Sala 1", "Sala de estudos", 40,01,40);
         Sala sala2 = new Sala("Sala 2", "Sala de estudos", 40,02,40);
@@ -59,6 +61,7 @@ public class Main extends Application {
         alocar.setPredio(ceagri);
         alocar.setProfessor(professor1);
         alocar.setSala(sala1);
+
 
         Aluno a1 = new Aluno();
         a1.setLogin("a1login");
@@ -87,12 +90,6 @@ public class Main extends Application {
         AlocacaoSalaGeneric ag2= new AlocacaoSalaGeneric(as2);
         */
 
-
-
-
-
-        fachada.cadastrarAluno(a1);
-        fachada.cadastrarAluno(a2);
 
 
         launch(Main.class);

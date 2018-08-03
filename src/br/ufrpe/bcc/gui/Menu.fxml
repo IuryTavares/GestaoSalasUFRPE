@@ -13,7 +13,7 @@
    <center>
       <AnchorPane prefHeight="400.0" prefWidth="640.0" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="175.0" layoutY="127.0" mnemonicParsing="false" onAction="#irCadastroProfessor" prefHeight="54.0" prefWidth="126.0" text="Cadastrar Professor" />
+            <Button layoutX="150.0" layoutY="152.0" mnemonicParsing="false" onAction="#irCadastroProfessor" prefHeight="54.0" prefWidth="126.0" text="Cadastrar Professor" />
             <Label layoutX="247.0" layoutY="57.0" text="Menu   Administrador" textAlignment="CENTER">
                <font>
                   <Font size="15.0" />
@@ -30,12 +30,10 @@
                </image>
             </ImageView>
             <Separator layoutY="84.0" prefHeight="2.0" prefWidth="640.0" />
-            <Button layoutX="175.0" layoutY="200.0" mnemonicParsing="false" onAction="#irCadastroPredio" prefHeight="54.0" prefWidth="126.0" text="Novo Prédio" />
-            <Button layoutX="175.0" layoutY="273.0" mnemonicParsing="false" onAction="#irListaPredios" prefHeight="54.0" prefWidth="126.0" text="Nova Sala" />
-            <Button layoutX="340.0" layoutY="200.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="126.0" text="Buscar Prédio" />
-            <Button layoutX="340.0" layoutY="273.0" mnemonicParsing="false" onAction="#irAlocacaoSala" prefHeight="54.0" prefWidth="126.0" text="Alocar Sala" />
+            <Button layoutX="150.0" layoutY="252.0" mnemonicParsing="false" onAction="#irCadastroSala" prefHeight="54.0" prefWidth="126.0" text="Nova Sala" />
+            <Button layoutX="344.0" layoutY="252.0" mnemonicParsing="false" onAction="#irAlocacaoSala" prefHeight="54.0" prefWidth="126.0" text="Alocar Sala" />
             <Separator layoutX="289.0" layoutY="59.0" orientation="VERTICAL" prefHeight="20.0" prefWidth="3.0" />
-            <Button layoutX="340.0" layoutY="127.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="126.0" text="Buscar Professor" />
+            <Button layoutX="344.0" layoutY="152.0" mnemonicParsing="false" onAction="#irListaProfessores" prefHeight="54.0" prefWidth="126.0" text="Buscar Professor" />
             <Button layoutX="561.0" layoutY="353.0" mnemonicParsing="false" onAction="#sair" prefHeight="28.0" prefWidth="65.0" text="Sair" />
          </children>
       </AnchorPane>

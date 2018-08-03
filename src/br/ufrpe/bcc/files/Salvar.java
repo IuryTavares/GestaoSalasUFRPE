@@ -29,7 +29,7 @@ public class Salvar{
         try {
             arq = new FileInputStream(fileName);
             ObjectInputStream in = new ObjectInputStream(arq);
-            Fachada fachada= (Fachada) in.readObject();
+            Fachada fachada = (Fachada) in.readObject();
             in.close();
             return fachada;
         } catch (FileNotFoundException e) {
