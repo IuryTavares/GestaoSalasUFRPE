@@ -24,8 +24,15 @@ public class RepositorioAlocacao implements IRepositorioAlocacao, Serializable {
     @Override
     public boolean novaAlocacao(AlocacaoSala a) {
         for(AlocacaoSala alocacao: repositorio){
-            if(a.equals(alocacao)){
-                return false;
+            if(a.getSala().equals(alocacao.getSala())){
+                if(a.getHoraInicio() >= alocacao.getHoraInicio()){
+                    if(a.getHoraInicio() < alocacao.getHoraFim()){
+                        return false;
+                    }
+                }
+                if(a.getHoraInicio() == alocacao.getHoraInicio()){
+                    return false;
+                }
             }
         }
         repositorio.add(a);

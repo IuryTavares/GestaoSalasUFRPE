@@ -16,13 +16,13 @@ public class AlocacaoSala implements Serializable {
     private int horaFim;
 
 
-    public AlocacaoSala(Predio predio, Sala sala, Professor professor, int horaInicio, int horaFim) {
+    public AlocacaoSala(Predio predio, Sala sala, Professor professor, int horaInicio, int horaFim, Date date) {
         this.predio = predio;
         this.sala = sala;
         this.professor = professor;
         this.horaInicio = horaInicio;
         this.horaFim = horaFim;
-        this.data = new Date();
+        this.data = date;
 
     }
 

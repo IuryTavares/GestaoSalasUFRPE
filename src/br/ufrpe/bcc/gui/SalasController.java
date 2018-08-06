@@ -29,9 +29,6 @@ public class SalasController implements Initializable {
     private TableColumn<AlocacaoSalaGeneric, String> colunaTipo;
 
     @FXML
-    private TableColumn<AlocacaoSalaGeneric, String> colunaStatus;
-
-    @FXML
     private TableColumn<AlocacaoSalaGeneric, String> colunaProfessor;
 
     @FXML
@@ -40,34 +37,15 @@ public class SalasController implements Initializable {
 
 
     private ObservableList<AlocacaoSalaGeneric> listaDeAlocacoes() {
-        Predio p1 = Fachada.getInstance().getPredio("12322123");
-
-        Sala s1 = new Sala(
-                "Sala 1","Sala de aula", 3.15 , 1, 30);
-        Sala s2 = new Sala(
-                "Sala 2","Auditorio", 6,2,60);
-
-        Professor pf1 = new Professor(
-                "Gru",42,"Algum Lugar","gru@ufrpe.br","3212-3456","123.456.789.0","gru","minions","DC");
-
-        AlocacaoSala as1 = new AlocacaoSala(p1,s1,pf1,14,16);
-        AlocacaoSala as2 = new AlocacaoSala(p1,s2,pf1,16,18);
-
-        AlocacaoSalaGeneric ag1= new AlocacaoSalaGeneric(as1);
-        AlocacaoSalaGeneric ag2= new AlocacaoSalaGeneric(as2);
 
         ArrayList<AlocacaoSalaGeneric>lista = new ArrayList<>();
-        lista.add(ag1);
-        lista.add(ag2);
 
-        return FXCollections.observableArrayList(
-                new AlocacaoSalaGeneric(as1),
-                new AlocacaoSalaGeneric(as2),
-                new AlocacaoSalaGeneric(as1),
-                new AlocacaoSalaGeneric(as1),
-                new AlocacaoSalaGeneric(as2),
-                new AlocacaoSalaGeneric(as2)
-        );
+        for(AlocacaoSala alocacao: Fachada.getInstance().listarSalas()){
+            AlocacaoSalaGeneric alocgeneric = new AlocacaoSalaGeneric(alocacao);
+            lista.add(alocgeneric);
+        }
+
+        return FXCollections.observableArrayList(lista);
     }
 
 
@@ -79,12 +57,14 @@ public class SalasController implements Initializable {
                 new PropertyValueFactory<AlocacaoSalaGeneric,Integer>("andar"));
         colunaProfessor.setCellValueFactory(
                 new PropertyValueFactory<AlocacaoSalaGeneric,String>("professor"));
-        colunaStatus.setCellValueFactory(
-                new PropertyValueFactory<AlocacaoSalaGeneric,String>("status"));
         colunaTipo.setCellValueFactory(
                 new PropertyValueFactory<AlocacaoSalaGeneric,String>("Tipo"));
 
         tabela.setItems(listaDeAlocacoes());
+    }
+
+    public void irAlocacao(){
+        Telas.getInstance().getNovaAlocacaoSala();
     }
 
 }

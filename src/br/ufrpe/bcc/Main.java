@@ -15,6 +15,7 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import java.io.IOException;
+import java.util.Date;
 
 public class Main extends Application {
 
@@ -36,22 +37,41 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
-        Fachada fachada;
+        Fachada fachada = Fachada.getInstance();
 
-        Salvar in = new Salvar();
-        fachada = in.carregar();
+        Predio p1 = Fachada.getInstance().getPredio("12322123");
 
+        Sala s1 = new Sala(
+                "Sala 1","Sala de aula", 3.15 , 1, 30);
+        Sala s2 = new Sala(
+                "Sala 2","Auditorio", 6,2,60);
+
+        Professor pf1 = new Professor(
+                "Gru",42,"Algum Lugar","gru@ufrpe.br","3212-3456","123.456.789.0","gru","minions","DC");
+
+        Date date = new Date();
+        AlocacaoSala as1 = new AlocacaoSala(p1,s1,pf1,14,16, date);
+        AlocacaoSala as2 = new AlocacaoSala(p1,s2,pf1,16,18, date);
+
+        Fachada.getInstance().novaAlocacao(as1);
+        Fachada.getInstance().novaAlocacao(as2);
+
+        Predio ceagri = new Predio("Ceagri-2", "12322123", 199.22,112.3);
+        fachada.cadastrarPredio(ceagri);
         Professor professor1 = new Professor("ProfessorGAME", 33, "Ceagri e e nois", "profelele@gmail.com", "819123123123","123123123212", "profelele","laemksa","DEINFO");
         Fachada.getInstance().cadastrarProfessor(professor1);
         Professor professor2 = new Professor("ProfessorGAME", 33, "Ceagri e e nois", "profelele@gmail.com", "819123123123","12312312322", "profelele","laemksa","DEINFO");
         Fachada.getInstance().cadastrarProfessor(professor2);
 
-        System.out.println(Fachada.getInstance().getListProfessor());
+        fachada.novaSala(ceagri,s1);
+        fachada.novaSala(ceagri,s2);
+
+        System.out.println(fachada.getListProfessor());
 
 
         /*
-        Predio ceagri = new Predio("Ceagri-2", "12322123", 199.22,112.3);
-        fachada.cadastrarPredio(ceagri);
+
+
         fachada.cadastrarProfessor(professor1);
         Sala sala1 = new Sala("Sala 1", "Sala de estudos", 40,01,40);
         Sala sala2 = new Sala("Sala 2", "Sala de estudos", 40,02,40);

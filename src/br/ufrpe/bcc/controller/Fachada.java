@@ -130,7 +130,7 @@ public class Fachada implements Serializable {
         return this.controladorAlocacao.removerAlocacao(a);
     }
 
-    public ArrayList<AlocacaoSala> listar(){
+    public ArrayList<AlocacaoSala> listarSalas(){
         return this.controladorAlocacao.getList();
     }
 

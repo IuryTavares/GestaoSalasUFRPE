@@ -57,7 +57,6 @@ public class ProfessoresController implements Initializable {
     }
 
     private ObservableList<Professor> listaDeProfessores() {
-        System.out.println(Fachada.getInstance().getListProfessor());
         return FXCollections.observableArrayList(Fachada.getInstance().getListProfessor());
     }
 
