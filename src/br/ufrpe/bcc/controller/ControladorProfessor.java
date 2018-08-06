@@ -26,6 +26,8 @@ public class ControladorProfessor implements IControladorProfessor, Serializable
         for(Professor professor: repositorio.getList()){
             if(login.equals(professor.getLogin())){
                 if(senha.equals(professor.getSenha())){
+                    System.out.println(login);
+                    System.out.println(senha);
                     return true;
                 }
             }

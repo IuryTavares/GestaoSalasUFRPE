@@ -32,6 +32,15 @@ public class SalasController implements Initializable {
     private TableColumn<AlocacaoSalaGeneric, String> colunaProfessor;
 
     @FXML
+    private TableColumn<AlocacaoSalaGeneric, String> colunaStatus;
+
+    @FXML
+    private TableColumn<AlocacaoSalaGeneric, Integer> colunaHinicial;
+
+    @FXML
+    private TableColumn<AlocacaoSalaGeneric, Integer> colunaHFim;
+
+    @FXML
     private  TableView<AlocacaoSalaGeneric> tabela;
 
 
@@ -59,12 +68,23 @@ public class SalasController implements Initializable {
                 new PropertyValueFactory<AlocacaoSalaGeneric,String>("professor"));
         colunaTipo.setCellValueFactory(
                 new PropertyValueFactory<AlocacaoSalaGeneric,String>("Tipo"));
+        colunaStatus.setCellValueFactory(new PropertyValueFactory<AlocacaoSalaGeneric, String>("status"));
+        colunaHinicial.setCellValueFactory(new PropertyValueFactory<AlocacaoSalaGeneric, Integer>("hInicial"));
+        colunaHFim.setCellValueFactory(new PropertyValueFactory<AlocacaoSalaGeneric, Integer>("hFinal"));
 
         tabela.setItems(listaDeAlocacoes());
     }
 
     public void irAlocacao(){
         Telas.getInstance().getNovaAlocacaoSala();
+    }
+
+    public void irMenu(){
+        Telas.getInstance().getMenuADM();
+    }
+
+    public void irLogin(){
+        Telas.getInstance().getLogin();
     }
 
 }

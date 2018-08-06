@@ -13,6 +13,8 @@ public class AlocacaoSalaGeneric {
     private SimpleStringProperty Tipo;
     private SimpleStringProperty status;
     private SimpleStringProperty professor;
+    private SimpleIntegerProperty hInicial;
+    private SimpleIntegerProperty hFinal;
     private AlocacaoSala alocacaoSala;
 
 
@@ -23,6 +25,8 @@ public class AlocacaoSalaGeneric {
         this.Tipo = new SimpleStringProperty(alocacaoSala.getSala().getTipo());
         this.status = new SimpleStringProperty("Ocupada");
         this.professor = new SimpleStringProperty(alocacaoSala.getProfessor().getNome());
+        this.hInicial = new SimpleIntegerProperty(alocacaoSala.getHoraInicio());
+        this.hFinal = new SimpleIntegerProperty(alocacaoSala.getHoraFim());
     }
 
 
@@ -92,5 +96,29 @@ public class AlocacaoSalaGeneric {
 
     public void setAlocacaoSala(AlocacaoSala alocacaoSala) {
         this.alocacaoSala = alocacaoSala;
+    }
+
+    public int gethInicial() {
+        return hInicial.get();
+    }
+
+    public SimpleIntegerProperty hInicialProperty() {
+        return hInicial;
+    }
+
+    public void sethInicial(int hInicial) {
+        this.hInicial.set(hInicial);
+    }
+
+    public int gethFinal() {
+        return hFinal.get();
+    }
+
+    public SimpleIntegerProperty hFinalProperty() {
+        return hFinal;
+    }
+
+    public void sethFinal(int hFinal) {
+        this.hFinal.set(hFinal);
     }
 }
