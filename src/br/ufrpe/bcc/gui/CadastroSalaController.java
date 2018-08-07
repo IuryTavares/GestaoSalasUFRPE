@@ -13,9 +13,6 @@ public class CadastroSalaController {
     private TextField txtNome;
 
     @FXML
-    private TextField txtID;
-
-    @FXML
     private TextField txtArea;
 
     @FXML
@@ -28,14 +25,13 @@ public class CadastroSalaController {
 
     @FXML
     void Cadastrar() {
-        int ID = this.txtID.getPrefColumnCount();
-        int andar = this.txtAndar.getPrefColumnCount();
-        int capacidade = this.txtCapacidade.getPrefColumnCount();
-        double area = this.txtArea.getPrefColumnCount();
+        int andar = Integer.valueOf(txtAndar.getText());
+        int capacidade = Integer.valueOf(txtCapacidade.getText());
+        double area = Double.valueOf(txtArea.getText());
         String nome = this.txtNome.getText();
         String tipo = this.txtTipo.getText();
 
-        Sala salagenerica = new Sala(nome,tipo,area,ID,andar,capacidade);
+        Sala salagenerica = new Sala(nome,tipo,area,(fachada.getPredio("12322123").getNumerosSalas()+1),andar,capacidade);
 
         fachada.novaSala(fachada.getPredio("12322123"), salagenerica);
 

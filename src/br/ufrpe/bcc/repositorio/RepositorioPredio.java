@@ -1,9 +1,10 @@
 package br.ufrpe.bcc.repositorio;
 
+import br.ufrpe.bcc.controller.Fachada;
 import br.ufrpe.bcc.model.negocios.beans.Predio;
 import br.ufrpe.bcc.model.negocios.beans.Sala;
 
-import java.io.Serializable;
+import java.io.*;
 import java.util.ArrayList;
 
 public class RepositorioPredio implements IRepositorioPredio, Serializable {
@@ -14,9 +15,9 @@ public class RepositorioPredio implements IRepositorioPredio, Serializable {
         repositorio = new ArrayList<>();
     }
 
-    public static IRepositorioPredio getInstance(){
+    public static synchronized IRepositorioPredio getInstance(){
         if(predios == null){
-            predios = new RepositorioPredio();
+            predios = lerArquivo();
         }
         return predios;
     }
@@ -28,6 +29,7 @@ public class RepositorioPredio implements IRepositorioPredio, Serializable {
             return false;
         }
         repositorio.add(p);
+        this.salvarArquivo();
         return true;
     }
 
@@ -69,7 +71,8 @@ public class RepositorioPredio implements IRepositorioPredio, Serializable {
                 return false;
             }
         }
-        p.getSalas().add(salag);
+        p.novaSala(salag);
+        this.salvarArquivo();
         return true;
     }
 
@@ -85,7 +88,55 @@ public class RepositorioPredio implements IRepositorioPredio, Serializable {
         return p.getSalas();
     }
 
-    public String getNumerosSalas(Predio p){
+    public int getNumerosSalas(Predio p){
         return p.getNumerosSalas();
+    }
+
+    public static RepositorioPredio lerArquivo(){
+        RepositorioPredio instance = null;
+        File in = new File("Predios.dat");
+        FileInputStream fis = null;
+        ObjectInputStream ois = null;
+
+        try{
+            fis = new FileInputStream(in);
+            ois = new ObjectInputStream(fis);
+
+            Object o = ois.readObject();
+            instance = (RepositorioPredio) o;
+        } catch (Exception e){
+            instance = new RepositorioPredio();
+        } finally {
+            if(ois != null){
+                try{
+                    ois.close();
+                }catch(IOException e){
+                    e.printStackTrace();
+                }
+            }
+        }
+        return instance;
+    }
+
+    public void salvarArquivo(){
+        File out = new File("Predios.dat");
+        FileOutputStream fos = null;
+        ObjectOutputStream oos = null;
+
+        try{
+            fos = new FileOutputStream(out);
+            oos = new ObjectOutputStream(fos);
+            oos.writeObject(predios);
+        } catch(Exception e){
+            e.printStackTrace();
+        } finally {
+            if(oos != null){
+                try{
+                    oos.close();
+                } catch(IOException e){
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 }

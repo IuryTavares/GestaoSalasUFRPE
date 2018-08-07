@@ -2,7 +2,7 @@ package br.ufrpe.bcc.repositorio;
 
 import br.ufrpe.bcc.model.negocios.beans.Professor;
 
-import java.io.Serializable;
+import java.io.*;
 import java.util.ArrayList;
 
 public class RepositorioProfessor implements IRepositorioProfessor, Serializable {
@@ -13,9 +13,9 @@ public class RepositorioProfessor implements IRepositorioProfessor, Serializable
         repositorio = new ArrayList<>();
     }
 
-    public static IRepositorioProfessor getInstance(){
+    public static synchronized IRepositorioProfessor getInstance(){
         if(professores == null){
-            professores = new RepositorioProfessor();
+            professores = lerArquivo();
         }
         return professores;
     }
@@ -26,6 +26,7 @@ public class RepositorioProfessor implements IRepositorioProfessor, Serializable
             return false;
         }
         repositorio.add(p);
+        this.salvarArquivo();
         return true;
     }
 
@@ -33,6 +34,7 @@ public class RepositorioProfessor implements IRepositorioProfessor, Serializable
     public void remover(Professor p) {
         if(existe(p.getCpf())){
             repositorio.remove(p);
+            this.salvarArquivo();
         }
         return;
     }
@@ -60,5 +62,53 @@ public class RepositorioProfessor implements IRepositorioProfessor, Serializable
     @Override
     public ArrayList<Professor> getList() {
         return this.repositorio;
+    }
+
+    public static RepositorioProfessor lerArquivo(){
+        RepositorioProfessor instance = null;
+        File in = new File("Professores.dat");
+        FileInputStream fis = null;
+        ObjectInputStream ois = null;
+
+        try{
+            fis = new FileInputStream(in);
+            ois = new ObjectInputStream(fis);
+
+            Object o = ois.readObject();
+            instance = (RepositorioProfessor) o;
+        } catch (Exception e){
+            instance = new RepositorioProfessor();
+        } finally {
+            if(ois != null){
+                try{
+                    ois.close();
+                }catch(IOException e){
+                    e.printStackTrace();
+                }
+            }
+        }
+        return instance;
+    }
+
+    public void salvarArquivo(){
+        File out = new File("Professores.dat");
+        FileOutputStream fos = null;
+        ObjectOutputStream oos = null;
+
+        try{
+            fos = new FileOutputStream(out);
+            oos = new ObjectOutputStream(fos);
+            oos.writeObject(professores);
+        } catch(Exception e){
+            e.printStackTrace();
+        } finally {
+            if(oos != null){
+                try{
+                    oos.close();
+                } catch(IOException e){
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 }

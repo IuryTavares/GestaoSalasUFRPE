@@ -63,4 +63,8 @@ public class ProfessoresController implements Initializable {
     public void voltar(){
         Telas.getInstance().getMenuADM();
     }
+
+    public void atualizarTabelaProfessores(){
+        tabelaProfessores.refresh();
+    }
 }

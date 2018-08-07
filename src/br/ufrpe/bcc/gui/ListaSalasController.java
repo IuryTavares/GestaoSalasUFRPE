@@ -16,6 +16,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
+import java.time.ZoneId;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 public class ListaSalasController implements Initializable {
@@ -44,6 +46,9 @@ public class ListaSalasController implements Initializable {
     private TextField intHFim;
 
     @FXML
+    private TextField txtID;
+
+    @FXML
     private DatePicker data;
 
     private Fachada fachada = Fachada.getInstance();
@@ -67,13 +72,31 @@ public class ListaSalasController implements Initializable {
 
     @FXML
     void alocarSala() {
-       // AlocacaoSala alocacaoSala = new AlocacaoSala(fachada.getPredio("12322123"), )
+        /*int id = Integer.valueOf(txtID.getText());
+        String cpf = txtCPF.getText();
+        int hinicio = Integer.valueOf(intHInicio.getText());
+        int hfim = Integer.valueOf(intHFim.getText());
+        Date date = Date.from(data.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant());
 
+
+        AlocacaoSala alocacaoSala = new AlocacaoSala(fachada.getPredio("12322123"), fachada.getSala(id), fachada.getProfessorCPF(cpf), hinicio, hfim, date );
+        try{
+            if(fachada.novaAlocacao(alocacaoSala)){
+                Telas.getInstance().getLogin();
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+*/
     }
 
     @FXML
     void voltar() {
         Telas.getInstance().getMenuADM();
+    }
+
+    public void atualizarTabelaAlocacaoSalas(){
+        tabelaSalas.refresh();
     }
 
 }

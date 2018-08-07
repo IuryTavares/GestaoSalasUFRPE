@@ -32,6 +32,7 @@
             <TextField fx:id="txtEndereco" layoutX="140.0" layoutY="194.0" prefHeight="26.0" prefWidth="204.0" promptText="Rua, Numero, Cidade" />
             <TextField fx:id="txtEmail" layoutX="415.0" layoutY="195.0" prefHeight="26.0" prefWidth="149.0" />
             <TextField fx:id="txtLogin" layoutX="140.0" layoutY="227.0" prefHeight="25.0" prefWidth="169.0" />
+            <TextField fx:id="txtDepartamento" layoutX="415.0" layoutY="227.0" prefHeight="26.0" prefWidth="149.0" />
             <Label layoutX="92.0" layoutY="131.0" text="Nome :" />
             <Label layoutX="375.0" layoutY="131.0" text="Idade :" />
             <Label layoutX="360.0" layoutY="164.0" text="Telefone :" />
@@ -52,7 +53,6 @@
             </ImageView>
             <Separator layoutY="84.0" prefHeight="2.0" prefWidth="640.0" />
             <Label layoutX="328.0" layoutY="232.0" text="Departamento : " />
-            <TextField fx:id="txtDepartamento" layoutX="415.0" layoutY="227.0" prefHeight="26.0" prefWidth="149.0" />
          </children>
       </AnchorPane>
    </center>

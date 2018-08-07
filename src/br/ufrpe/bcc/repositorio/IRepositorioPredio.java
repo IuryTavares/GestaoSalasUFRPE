@@ -15,5 +15,5 @@ public interface IRepositorioPredio {
     int numeroSalasDisponiveis(Predio p);
     int numeroSalasOcupadas(Predio p);
     ArrayList<Sala> getSalasPredio(Predio p);
-    String getNumerosSalas(Predio p);
+    int getNumerosSalas(Predio p);
 }

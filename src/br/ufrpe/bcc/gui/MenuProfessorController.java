@@ -14,7 +14,8 @@ public class MenuProfessorController {
         Telas.getInstance().getAlocarSala();
     }
 
+    @FXML
     void sair() {
-        Telas.getInstance().getMenuProfessor();
+        Telas.getInstance().getLogin();
     }
 }

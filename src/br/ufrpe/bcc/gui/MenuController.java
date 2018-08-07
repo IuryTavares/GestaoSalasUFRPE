@@ -19,10 +19,6 @@ public class MenuController implements Serializable {
         Telas.getInstance().getCadastroProfessor();
     }
 
-    public void irCadastroPredio(){
-        Telas.getInstance().getCadastroPredio();
-    }
-
     public void irCadastroSala() { Telas.getInstance().getCadastroSala(); }
 
     public void irListaProfessores() { Telas.getInstance().getListaProfessores(); }

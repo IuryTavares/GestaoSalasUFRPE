@@ -24,14 +24,14 @@
                   <Font size="20.0" />
                </font>
             </Label>
-            <TextField fx:id="txtTipo" layoutX="107.0" layoutY="198.0" prefHeight="26.0" prefWidth="204.0" />
-            <TextField fx:id="txtNome" layoutX="107.0" layoutY="164.0" prefHeight="25.0" prefWidth="204.0" />
-            <TextField fx:id="txtID" layoutX="381.0" layoutY="164.0" prefHeight="26.0" prefWidth="204.0" />
-            <TextField fx:id="txtArea" layoutX="381.0" layoutY="230.0" prefHeight="25.0" prefWidth="49.0" />
-            <Label layoutX="56.0" layoutY="168.0" text="Nome  :" />
-            <Label layoutX="342.0" layoutY="234.0" text="Área  :" />
-            <Label layoutX="70.0" layoutY="202.0" text="Tipo :" />
-            <Label layoutX="359.0" layoutY="168.0" text="ID :" />
+            <TextField fx:id="txtNome" layoutX="107.0" layoutY="173.0" prefHeight="25.0" prefWidth="204.0" />
+            <TextField fx:id="txtTipo" layoutX="107.0" layoutY="207.0" prefHeight="26.0" prefWidth="204.0" />
+            <TextField fx:id="txtAndar" layoutX="383.0" layoutY="173.0" prefHeight="26.0" prefWidth="204.0" />
+            <TextField fx:id="txtCapacidade" layoutX="107.0" layoutY="241.0" prefHeight="25.0" prefWidth="53.0" />
+            <TextField fx:id="txtArea" layoutX="383.0" layoutY="208.0" prefHeight="25.0" prefWidth="49.0" />
+            <Label layoutX="56.0" layoutY="177.0" text="Nome  :" />
+            <Label layoutX="342.0" layoutY="211.0" text="Área  :" />
+            <Label layoutX="70.0" layoutY="211.0" text="Tipo :" />
             <Button layoutX="320.0" layoutY="296.0" mnemonicParsing="false" onAction="#Cadastrar" text="Cadastrar" />
             <Button layoutX="254.0" layoutY="296.0" mnemonicParsing="false" onAction="#voltarMENU" text="Voltar" />
             <ImageView fitHeight="84.0" fitWidth="55.0" layoutX="548.0">
@@ -40,10 +40,8 @@
                </image>
             </ImageView>
             <Separator layoutY="84.0" prefHeight="2.0" prefWidth="640.0" />
-            <Label layoutX="339.0" layoutY="202.0" text="Andar :" />
-            <Label layoutX="33.0" layoutY="234.0" text="Capacidade : " />
-            <TextField fx:id="txtAndar" layoutX="381.0" layoutY="198.0" prefHeight="26.0" prefWidth="204.0" />
-            <TextField fx:id="txtCapacidade" layoutX="107.0" layoutY="230.0" prefHeight="25.0" prefWidth="53.0" />
+            <Label layoutX="339.0" layoutY="177.0" text="Andar :" />
+            <Label layoutX="33.0" layoutY="245.0" text="Capacidade : " />
          </children>
       </AnchorPane>
    </center>

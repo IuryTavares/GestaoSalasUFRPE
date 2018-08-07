@@ -122,16 +122,27 @@ public class Predio implements Serializable {
         return salasexit;
     }
 
-    public String getNumerosSalas(){
+    public int getNumerosSalas(){
+        int contador = 0;
         for(Sala sala: salas){
-            return sala.getNome();
+            contador++;
         }
-        return null;
+        return contador;
     }
 
     public void novaSala(Sala salag){
         this.salas.add(salag);
         return;
+    }
+
+
+    public Sala getSala(int ID){
+        for(Sala sala: salas){
+            if(ID == sala.getId()){
+                return sala;
+            }
+        }
+        return null;
     }
 
 }

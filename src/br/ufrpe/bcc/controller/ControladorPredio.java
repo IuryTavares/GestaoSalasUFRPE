@@ -58,4 +58,6 @@ public class ControladorPredio implements IControladorPredio, Serializable {
     public ArrayList<Sala> getSalasPredio(Predio p){
         return this.repositorio.getSalasPredio(p);
     }
+
+
 }

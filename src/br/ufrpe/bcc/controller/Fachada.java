@@ -1,6 +1,5 @@
 package br.ufrpe.bcc.controller;
 
-import br.ufrpe.bcc.files.Salvar;
 import br.ufrpe.bcc.model.negocios.AlocacaoSala;
 import br.ufrpe.bcc.model.negocios.beans.Aluno;
 import br.ufrpe.bcc.model.negocios.beans.Predio;
@@ -34,10 +33,7 @@ public class Fachada implements Serializable {
     //Aluno
 
     public boolean cadastrarAluno(Aluno a){
-        Salvar out = new Salvar();
-        boolean confirm = this.controladorAluno.cadastrar(a);
-        out.salvar(this);
-        return confirm;
+        return this.controladorAluno.cadastrar(a);
 
     }
 
@@ -53,15 +49,14 @@ public class Fachada implements Serializable {
     //Professor
 
     public boolean cadastrarProfessor(Professor p){
-        Salvar out = new Salvar();
-        boolean confirm = this.controladorProfessor.cadastrar(p);
-        out.salvar(this);
-        return confirm;
+        return this.controladorProfessor.cadastrar(p);
     }
 
     public Professor buscarProfessor(Professor p){
         return this.controladorProfessor.buscar(p.getCpf());
     }
+
+    public Professor getProfessorCPF(String cpf){ return this.controladorProfessor.buscar(cpf); }
 
     public boolean logarProfessor(String login, String senha){
         return this.controladorProfessor.logar(login,senha);
@@ -79,10 +74,7 @@ public class Fachada implements Serializable {
     //Predio
 
     public boolean cadastrarPredio(Predio p){
-        Salvar out = new Salvar();
-        boolean confirm = this.controladorPredio.cadastrarPredio(p);
-        out.salvar(this);
-        return confirm;
+        return this.controladorPredio.cadastrarPredio(p);
 
     }
 
@@ -91,10 +83,7 @@ public class Fachada implements Serializable {
     }
 
     public boolean novaSala(Predio p, Sala salag){
-        Salvar out = new Salvar();
-        boolean confirm = this.controladorPredio.novaSala(p,salag);
-        out.salvar(this);
-        return confirm;
+        return this.controladorPredio.novaSala(p,salag);
     }
 
     public int numeroSalasDisponiveis(Predio p){
@@ -118,6 +107,10 @@ public class Fachada implements Serializable {
             }
         }
         return null;
+    }
+
+    public Sala getSala(int id){
+        return Fachada.getInstance().getPredio("12322123").getSala(id);
     }
 
     //Alocacao

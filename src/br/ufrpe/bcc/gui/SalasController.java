@@ -87,4 +87,8 @@ public class SalasController implements Initializable {
         Telas.getInstance().getLogin();
     }
 
+    public void atualizarTabelaSalas(){
+        tabela.refresh();
+    }
+
 }
