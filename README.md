@@ -11,9 +11,8 @@ Versão do Java: Java SE Development Kit 10.0.1
 - Alocação de Salas ou desalocação
 - Consulta de disponibilidade de salas em cada prédio
 - Sistema de login/senha
-- Relatório de Salas mais usadas ou menos usadas
 
 ## Definição da arquitetura: 
 
-![alt text](https://imgur.com/iSVot4Z.png)
+![alt text](https://imgur.com/UKjap4U.png)
 
