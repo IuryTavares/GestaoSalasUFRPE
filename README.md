@@ -16,10 +16,10 @@ Projeto de IP2 referente à segunda avaliação do período 2018.1.
 
 ## Instruções de Uso:
 
-####Instalação:
+#### Instalação:
 - Para utilizar o programa de Gestão de Salas UFRPE, basta ir na pasta fonte do programa, e executar o arquivo "GestaoSalasUFRPE.jar".
 
-####Uso interno do programa:
+#### Uso interno do programa:
 - Caso seja o administrador do sistema, basta logar com Login: admin e Senha: admin, que será redirecionado para um menu específico para Administradores, onde poderá fazer o Cadastro de: Salas, Professores, e novas Alocações, além de obter listas de salas alocadas e de professores cadastrados no sistema.
 - Caso seja Professor, utilizando-se de seu Login e Senha providos pelo administrador, poderá Alocar Salas e Consultar as Salas já alocadas.
 
