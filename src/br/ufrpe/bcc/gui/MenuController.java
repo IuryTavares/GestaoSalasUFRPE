@@ -8,6 +8,7 @@ public class MenuController implements Serializable {
     private Fachada fachada = Fachada.getInstance();
 
     public void irAlocacaoSala(){
+
         Telas.getInstance().getAlocarSala();
     }
 

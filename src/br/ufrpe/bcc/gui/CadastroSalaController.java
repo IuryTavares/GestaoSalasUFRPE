@@ -42,4 +42,6 @@ public class CadastroSalaController {
     void voltarMENU() {
         Telas.getInstance().getMenuADM();
     }
+
+
 }

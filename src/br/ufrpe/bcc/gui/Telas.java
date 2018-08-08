@@ -9,7 +9,7 @@ import java.io.Serializable;
 
 public class Telas implements Serializable {
     FXMLLoader login, cadastroAluno, menuADM, alocarSala, cadastroProfessor, cadastroPredio, listaProfessores, cadastroSala,
-            alocacaoSala, menuProfessor;
+            alocacaoSala, menuProfessor, alocacaoSalaProfessor;
     BorderPane paneLogin;
     BorderPane border;
     BorderPane paneCadastroAluno;
@@ -21,6 +21,7 @@ public class Telas implements Serializable {
     BorderPane paneCadastroSala;
     BorderPane paneAlocacaoSala;
     BorderPane paneMenuProfessor;
+    BorderPane paneAlocacaoSalaProfessor;
 
     public static Telas instancia;
 
@@ -53,6 +54,8 @@ public class Telas implements Serializable {
             this.paneAlocacaoSala = alocacaoSala.load();
             menuProfessor = new FXMLLoader(this.getClass().getResource("/br/ufrpe/bcc/gui/MenuProfessor.fxml"));
             this.paneMenuProfessor = menuProfessor.load();
+            alocacaoSalaProfessor = new FXMLLoader(this.getClass().getResource("/br/ufrpe/bcc/gui/ListaSalasProfessor.fxml"));
+            this.paneAlocacaoSalaProfessor = alocacaoSalaProfessor.load();
             this.border = Main.getRoot();
 
         }catch(IOException e){
@@ -93,5 +96,13 @@ public class Telas implements Serializable {
     }
 
     public void getMenuProfessor(){ border.setCenter(this.paneMenuProfessor); }
+
+    public void getAlocacaoSalaProfessor(){
+        border.setCenter(this.paneAlocacaoSalaProfessor);
+    }
+
+    public void atualizarTabelas(){
+
+    }
 
 }

@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufrpe.bcc.gui.ListaSalasController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufrpe.bcc.gui.ListaSalasProfessorController">
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
@@ -45,12 +45,12 @@
             <DatePicker fx:id="data" layoutX="420.0" layoutY="253.0" />
             <Label layoutX="377.0" layoutY="257.0" text="Data :" />
             <Separator layoutX="285.0" layoutY="8.0" orientation="VERTICAL" prefHeight="384.0" prefWidth="6.0" />
-            <Label layoutX="471.0" layoutY="52.0" text="- Alocação Sala -">
+            <Label layoutX="401.0" layoutY="43.0" text="- Alocação Sala -">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Label>
-            <Label layoutX="504.0" layoutY="74.0" text="Professor">
+            <Label layoutX="434.0" layoutY="65.0" text="Professor">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>

@@ -2,8 +2,6 @@ package br.ufrpe.bcc.gui;
 
 import br.ufrpe.bcc.controller.Fachada;
 import br.ufrpe.bcc.model.negocios.AlocacaoSala;
-import br.ufrpe.bcc.model.negocios.beans.AlocacaoSalaGeneric;
-import br.ufrpe.bcc.model.negocios.beans.Professor;
 import br.ufrpe.bcc.model.negocios.beans.Sala;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -20,7 +18,7 @@ import java.time.ZoneId;
 import java.util.Date;
 import java.util.ResourceBundle;
 
-public class ListaSalasController implements Initializable {
+public class ListaSalasProfessorController implements Initializable {
     @FXML
     private TableView<Sala> tabelaSalas;
 
@@ -66,7 +64,6 @@ public class ListaSalasController implements Initializable {
     }
 
     private ObservableList<Sala> listaSalas() {
-        System.out.println("salas" + fachada.getSalasPredio(fachada.getPredio("12322123")));
         return FXCollections.observableArrayList(fachada.getSalasPredio(fachada.getPredio("12322123")));
     }
 
@@ -93,7 +90,7 @@ public class ListaSalasController implements Initializable {
 
     @FXML
     void voltar() {
-        Telas.getInstance().getMenuADM();
+        Telas.getInstance().getMenuProfessor();
     }
 
     public void atualizarTabelaAlocacaoSala(){

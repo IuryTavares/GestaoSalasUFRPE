@@ -88,7 +88,12 @@ public class SalasController implements Initializable {
     }
 
     public void atualizarTabelaSalas(){
-        tabela.refresh();
+        tabela.getColumns().get(0).setVisible(false);
+        tabela.getColumns().get(0).setVisible(true);
+    }
+
+    public TableView<AlocacaoSalaGeneric> getTabela(){
+        return tabela;
     }
 
 }

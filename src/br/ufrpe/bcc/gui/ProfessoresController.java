@@ -65,6 +65,11 @@ public class ProfessoresController implements Initializable {
     }
 
     public void atualizarTabelaProfessores(){
-        tabelaProfessores.refresh();
+        tabelaProfessores.getColumns().get(0).setVisible(false);
+        tabelaProfessores.getColumns().get(0).setVisible(true);
+    }
+
+    public TableView<Professor> getTabela(){
+        return tabelaProfessores;
     }
 }
