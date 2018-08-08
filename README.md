@@ -17,7 +17,6 @@ Projeto de IP2 referente à segunda avaliação do período 2018.1.
 ## Instruções de Uso:
 
 ####Instalação:
-
 - Para utilizar o programa de Gestão de Salas UFRPE, basta ir na pasta fonte do programa, e executar o arquivo "GestaoSalasUFRPE.jar".
 
 ####Uso interno do programa:
