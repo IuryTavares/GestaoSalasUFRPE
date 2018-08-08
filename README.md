@@ -32,6 +32,7 @@ Projeto de IP2 referente à segunda avaliação do período 2018.1.
  - Para Alocar uma Sala, basta informar seu CPF, o ID da Sala, mostrado na primeira coluna da Tabela de Salas, a Hora de Início e a Hora de Fim do uso da sala, além da data da Alocação.
 
 ## Definição da arquitetura: 
+- Para melhor visualização da Arquitetura, clicar na imagem e utilizar Zoom.
 
 ![alt text](https://imgur.com/UKjap4U.png)
 
