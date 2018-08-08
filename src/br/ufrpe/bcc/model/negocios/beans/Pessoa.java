@@ -1,13 +1,26 @@
-package br.ufrpe.bcc.model.beans;
+package br.ufrpe.bcc.model.negocios.beans;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Pessoa {
+public class Pessoa implements Serializable {
     private String nome;
     private int idade;
     private String endereco;
     private String email;
     private String telefone;
+
+    public Pessoa(){
+
+    }
+
+    public Pessoa(String nome, int idade, String endereco, String email, String telefone) {
+        this.nome = nome;
+        this.idade = idade;
+        this.endereco = endereco;
+        this.email = email;
+        this.telefone = telefone;
+    }
 
     @Override
     public String toString() {
